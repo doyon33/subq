@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//자주 사용하는 텍스트, 위젯 스타일을 한 번에 관리
 const kLargeTextStyle =
     TextStyle(
       color: Colors.black, fontWeight: FontWeight.w700,
@@ -37,6 +38,7 @@ var buttonStyle =
         color: const Color(0xfffbefc3)
     );
 
+//container with green background
 Widget buildContainer (String text1, String img, String text2) {
     return Container(
         padding: const EdgeInsets.all(10.0),
@@ -58,6 +60,10 @@ Widget buildContainer (String text1, String img, String text2) {
         )
     );
 }
+
+// light yellow button with text : move to another page
+// 서버에 데이터를 전송하는 등의 기능 가진 버튼은 동일한 decoration을 사용하나,
+// 이 양식으로 생성하지 않을 수 있음.
 
 Widget buildButton (BuildContext currentPage, Widget linkedPage, String text) {
     return InkWell(
