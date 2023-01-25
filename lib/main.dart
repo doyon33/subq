@@ -14,13 +14,13 @@ class subQ extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: firstPage(),
+      home: FirstPage(),
     );
   }
 }
 
-class firstPage extends StatelessWidget {
-  const firstPage({Key? key}) : super(key: key);
+class FirstPage extends StatelessWidget {
+  const FirstPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -68,8 +68,8 @@ class firstPage extends StatelessWidget {
   }
 }
 
-class Menu extends StatelessWidget {
-  const Menu({Key? key}) : super(key: key);
+class MenuPage extends StatelessWidget {
+  const MenuPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -99,11 +99,12 @@ class Menu extends StatelessWidget {
     );
   }
 
+  //향후 메뉴 페이지에 추가될 목록들의 생성을 용이하게 하기 위함
   Widget _buildMenuItem(BuildContext currentPage, IconData icon, String text) {
     return InkWell(
       onTap: () {
         Navigator.push(currentPage,
-            MaterialPageRoute(builder: (currentPage) => const sendReport())
+            MaterialPageRoute(builder: (currentPage) => const SendReport())
         );
       },
       child: (
@@ -136,8 +137,9 @@ class Menu extends StatelessWidget {
   }
 }
 
-class sendReport extends StatelessWidget {
-  const sendReport({Key? key}) : super(key: key);
+//의견 보내기 페이지
+class SendReport extends StatelessWidget {
+  const SendReport({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
