@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:subq/typeTest.dart';
+import 'typeTest.dart';
 import 'appbar.dart';
 import 'constants.dart';
-import 'typeTest.dart';
 
 void main(){
   runApp(const subQ());
@@ -15,6 +14,7 @@ class subQ extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: FirstPage(),
+      // home: TestBread1(),
     );
   }
 }
@@ -51,7 +51,7 @@ class FirstPage extends StatelessWidget {
           InkWell(
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TestStart())
+                  MaterialPageRoute(builder: (context) => const TestStart())
               );
             },
             child: Container(
@@ -136,6 +136,13 @@ class MenuPage extends StatelessWidget {
     );
   }
 }
+void screenInfo(BuildContext context) {
+  MediaQuery.of(context).size;             //앱 화면 크기 size  Ex> Size(360.0, 692.0)
+  MediaQuery.of(context).size.height;      //앱 화면 높이 double Ex> 692.0
+  MediaQuery.of(context).size.width;       //앱 화면 넓이 double Ex> 360.0
+  MediaQuery.of(context).devicePixelRatio; //화면 배율    double Ex> 4.0
+  MediaQuery.of(context).padding.top;
+}
 
 //의견 보내기 페이지
 class SendReport extends StatelessWidget {
@@ -149,3 +156,4 @@ class SendReport extends StatelessWidget {
     );
   }
 }
+
