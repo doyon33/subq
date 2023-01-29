@@ -63,8 +63,8 @@ flutter:
   assets:
 #    - /Volumes/Crucial_X8/web_pj/subq/assets/images/
 #    - /Volumes/Crucial_X8/web_pj/subq/assets/fonts/
-    - assets/images/
-    - assets/fonts/
+    - assets/image/
+    - assets/font/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -82,9 +82,9 @@ flutter:
      - family: hyemin
        fonts:
 #         - asset: /Volumes/Crucial_X8/web_pj/subq/assets/fonts/IM_Hyemin-Regular.otf
-         - asset: assets/fonts/IM_Hyemin-Regular.otf
+         - asset: assets/font/IM_Hyemin-Regular.otf
            weight: 400
-         - asset: assets/fonts/IM_Hyemin-Bold.otf
+         - asset: assets/font/IM_Hyemin-Bold.otf
            weight: 700
   #   - family: Trajan Pro
   #     fonts:

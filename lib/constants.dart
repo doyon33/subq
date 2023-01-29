@@ -38,7 +38,7 @@ var kContainerStyle =
       color: const Color(0xffe4eee9)
     );
 
-var buttonStyle =
+var kButtonStyle =
     BoxDecoration(
         borderRadius: BorderRadius.circular(30),
         color: const Color(0xfffbefc3)
@@ -53,10 +53,10 @@ Widget buildContainer(String text1, String img, String text2) {
       // height: 150.0,
       decoration: kContainerStyle,
       child: Column(children: [
-        // Text(
-        //     text1,
-        //     style: kMediumTextStyle,
-        // ),
+        Text(
+            text1,
+            style: kMediumTextStyle,
+        ),
         Image.asset(
           img,
           height: 110.0,
@@ -82,7 +82,7 @@ Widget buildButton(BuildContext currentPage, Widget linkedPage, String text) {
       margin: const EdgeInsets.only(top: 5.0, bottom: 5.0),
       width: 140.0,
       alignment: Alignment.center,
-      decoration: buttonStyle,
+      decoration: kButtonStyle,
       child: Text(
         text,
         style: kMediumTextStyle,
@@ -212,7 +212,7 @@ Widget buildButtons(Buttons btn, func) {
 //topping
 Widget toppingImg(String menuName, String imgFile, String menuInfo) {
   return Container(
-    width: 220.0,
+    width: 230.0,
     padding: const EdgeInsets.only(
         left: 25.0, top:10.0, bottom: 10.0, right: 25.0),
     child: (

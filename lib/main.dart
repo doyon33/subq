@@ -13,8 +13,8 @@ class subQ extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: FirstPage(),
-      // home: TestBread1(),
+      // home: FirstPage(),
+      home: TestResultLoading(),
     );
   }
 }
@@ -42,7 +42,7 @@ class FirstPage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 50.0,),
-          Image.asset('images/menus/eggmayo.png', height: 110.0,),
+          Image.asset('image/menu/eggmayo.png', height: 110.0,),
           const SizedBox(height: 50.0,),
           const Text('브레드부터 소스까지\n재료를 평가하면\n서브큐가 꿀조합을 추천해드려요.',
           textAlign: TextAlign.center,
@@ -56,7 +56,7 @@ class FirstPage extends StatelessWidget {
             },
             child: Container(
               padding: const EdgeInsets.all(20.0),
-              decoration: buttonStyle,
+              decoration: kButtonStyle,
               child: const Text(
                 '취향 분석 시작하기', style: kMediumTextStyle,
               ),

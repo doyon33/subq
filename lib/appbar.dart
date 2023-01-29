@@ -15,7 +15,7 @@ class MainAppBar extends StatelessWidget with PreferredSizeWidget {
       centerTitle: true,
       title: IconButton(
         //현재 로고 사진에 흰 배경이 있어 위화감이 있으나 향후 수정할 예정
-        icon: Image.asset('images/icons/logo.jpg'),
+        icon: Image.asset('image/icon/logo.jpg'),
         onPressed: () {
           Navigator.push(context,
               MaterialPageRoute(builder: (context)=> const FirstPage())
