@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'appbar.dart';
+import 'AppBar.dart';
 import 'constants.dart';
-import 'button.dart';
+import 'Button.dart';
 import 'dart:async';
+import 'TestResult.dart';
 
 //first page of test
 class TestStart extends StatelessWidget {
@@ -16,13 +17,12 @@ class TestStart extends StatelessWidget {
         children: [
           buildContainer('', 'image/icon/question.png', '어떤 목적을 중심으로\n추천받고 싶으신가요?\n'),
           const SizedBox(height: 5.0,),
-          buildButton(context, const TestBread1(), '영양 균형'),
-          buildButton(context, const TestBread1(), '저탄수화물'),
-          buildButton(context, const TestBread1(), '고단백질'),
-          buildButton(context, const TestBread1(), '저칼로리'),
-          buildButton(context, const TestBread1(), '저염'),
-          buildButton(context, const TestBread1(), '꿀조합')
-
+          buildButton(context, const TestBread1(), '  영양 균형  '),
+          buildButton(context, const TestBread1(), '  저탄수화물  '),
+          buildButton(context, const TestBread1(), '  고단백질  '),
+          buildButton(context, const TestBread1(), '  저칼로리  '),
+          buildButton(context, const TestBread1(), '  저염  '),
+          buildButton(context, const TestBread1(), '  맛 우선  ')
         ],
       ),
     );
@@ -50,7 +50,7 @@ class _TestBread1State extends State<TestBread1> {
       appBar: const MainAppBar(),
       body: Column(
         children: [
-          buildTop(1, 0.083, '빵'),
+          buildTop(1, 0.076, '빵'),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -115,7 +115,7 @@ class _TestBread2State extends State<TestBread2> {
       appBar: const MainAppBar(),
       body: Column(
           children: [
-            buildTop(2, 0.166, '빵'),
+            buildTop(2, 0.153, '빵'),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -170,7 +170,7 @@ class _TestMain1State extends State<TestMain1> {
       appBar: MainAppBar(),
       body: Column(
         children: [
-          buildTop(3, 0.25, '메인 메뉴'),
+          buildTop(3, 0.23, '메인 메뉴'),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -236,7 +236,7 @@ class _TestMain2State extends State<TestMain2> {
       appBar: MainAppBar(),
       body: Column(
           children: [
-            buildTop(4, 0.33, '메인 메뉴'),
+            buildTop(4, 0.307, '메인 메뉴'),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -260,6 +260,72 @@ class _TestMain2State extends State<TestMain2> {
               children: [
                 toppingImg('베이컨', 'image/menu/bacon.png', ''),
                 buildButtons(btn_main8, updateData)
+              ],),
+            buildButton(context, const TestMain3(), '다음으로')
+          ]
+      ),
+    );
+  }
+  void updateData(int num, Buttons btn) {
+    setState(() {
+      if (num == 1) {
+        btn.clickBad();
+      }
+      else if (num == 2) {
+        btn.clickGood();
+      }
+      else if (num == 3) {
+        btn.clickNice();
+      }
+    });
+  }
+}
+
+//type test : main_page3
+class TestMain3 extends StatefulWidget {
+  const TestMain3({Key? key}) : super(key: key);
+
+  @override
+  State<TestMain3> createState() => _TestMain3State();
+}
+
+class _TestMain3State extends State<TestMain3> {
+
+  Buttons btn_main9 = Buttons('SUBWAY_MAINMENU_10018'); //베지
+  Buttons btn_main10 = Buttons('SUBWAY_MAINMENU_10010'); //치킨브레스트햄
+  Buttons btn_main11 = Buttons('SUBWAY_TOPPING_OTHER_10001'); //페퍼로니
+  Buttons btn_main12 = Buttons('SUBWAY_TOPPING_OTHER_10002'); //살라미
+
+
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: MainAppBar(),
+      body: Column(
+          children: [
+            buildTop(5, 0.384, '메인 메뉴'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                toppingImg('베지', 'image/menu/veggie.png', ''),
+                buildButtons(btn_main9, updateData),
+              ],),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                toppingImg('치킨브레스트햄', 'image/main/chicken_breast_ham.png', ''),
+                buildButtons(btn_main10, updateData),
+              ],),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                toppingImg('페퍼로니', 'image/main/pepperoni.png', ''),
+                buildButtons(btn_main11, updateData)
+              ],),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                toppingImg('살라미', 'image/main/salami.png', ''),
+                buildButtons(btn_main12, updateData)
               ],),
             buildButton(context, const TestCheese(), '다음으로')
           ]
@@ -300,7 +366,7 @@ class _TestCheeseState extends State<TestCheese> {
       appBar: MainAppBar(),
       body: Column(
           children: [
-            buildTop(5, 0.41, '치즈'),
+            buildTop(6, 0.46, '치즈'),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -359,7 +425,7 @@ class _TestVege1State extends State<TestVege1> {
       appBar: MainAppBar(),
       body: Column(
           children: [
-            buildTop(6, 0.5, '야채'),
+            buildTop(7, 0.53, '야채'),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -424,7 +490,7 @@ class _TestVege2State extends State<TestVege2> {
       appBar: MainAppBar(),
       body: Column(
           children: [
-            buildTop(7, 0.583, '야채'),
+            buildTop(8, 0.615, '야채'),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -486,7 +552,7 @@ class _TestVege3State extends State<TestVege3> {
       appBar: MainAppBar(),
       body: Column(
           children: [
-            buildTop(8, 0.666, '야채'),
+            buildTop(9, 0.692, '야채'),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -533,7 +599,7 @@ class _TestSauce1State extends State<TestSauce1> {
       appBar: MainAppBar(),
       body: Column(
           children: [
-            buildTop(9, 0.75, '소스'),
+            buildTop(10, 0.769, '소스'),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -598,7 +664,7 @@ class _TestSauce2State extends State<TestSauce2> {
       appBar: MainAppBar(),
       body: Column(
           children: [
-            buildTop(10, 0.83, '소스'),
+            buildTop(11, 0.846, '소스'),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -663,7 +729,7 @@ class _TestSauce3State extends State<TestSauce3> {
       appBar: MainAppBar(),
       body: Column(
           children: [
-            buildTop(11, 0.91, '소스'),
+            buildTop(12, 0.923, '소스'),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -679,7 +745,7 @@ class _TestSauce3State extends State<TestSauce3> {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                toppingImg('레드와인식초', 'image/sauce/red_wine.png', '풍미 가득'),
+                toppingImg('레드와인식초', 'image/sauce/red_wine.png', '#풍미 가득'),
                 buildButtons(btn_sauce11, updateData)
               ],),
             Row(
@@ -688,7 +754,7 @@ class _TestSauce3State extends State<TestSauce3> {
                 toppingImg('소금', 'image/sauce/salt.png', '소금'),
                 buildButtons(btn_sauce11, updateData)
               ],),
-            buildButton(context, const TestVege1(), '다음으로')
+            buildButton(context, const TestSauce4(), '다음으로')
           ]
       ),
     );
@@ -728,7 +794,7 @@ class _TestSauce4State extends State<TestSauce4> {
       appBar: MainAppBar(),
       body: Column(
           children: [
-            buildTop(12, 1, '소스'),
+            buildTop(13, 1, '소스'),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -738,13 +804,13 @@ class _TestSauce4State extends State<TestSauce4> {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                toppingImg('스모크 바비큐', 'image/sauce/smoke_bbq.png', '#'),
+                toppingImg('스모크 바비큐', 'image/sauce/smoke_bbq.png', '#스모크_향 #달콤한_바비큐'),
                 buildButtons(btn_sauce14, updateData),
               ],),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                toppingImg('이탈리안 드레싱', 'image/sauce/italian_dressing.png', ''),
+                toppingImg('이탈리안 드레싱', 'image/sauce/italian_dressing.png', '#상큼함 #샐러드와_찰떡궁합'),
                 buildButtons(btn_sauce15, updateData)
               ],),
             buildButton(context, const TestResultLoading(), '다음으로')
@@ -782,7 +848,7 @@ class _TestResultLoadingState extends State<TestResultLoading> {
       super.initState();
       Timer(const Duration(seconds: 2), () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const TestResult()));
+            MaterialPageRoute(builder: (context) => TestResult()));
       });
     }
 
@@ -800,7 +866,7 @@ class _TestResultLoadingState extends State<TestResultLoading> {
               Padding(
                 padding: EdgeInsets.only(top: 10.0, right: 10.0),
                 child: Text(
-                  '12/12',
+                  '13/13',
                   style: kSmallTextStyle,
                 ),
               )
@@ -828,25 +894,6 @@ class _TestResultLoadingState extends State<TestResultLoading> {
             child: Image.asset('image/icon/loading.gif'),
           )
         ],
-      ),
-    );
-  }
-}
-
-class TestResult extends StatefulWidget {
-  const TestResult({Key? key}) : super(key: key);
-
-  @override
-  State<TestResult> createState() => _TestResultState();
-}
-
-class _TestResultState extends State<TestResult> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const MainAppBar(),
-      body: Column(
-        children: [],
       ),
     );
   }
