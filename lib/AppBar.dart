@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'main.dart';
-
+import 'package:subq/SubPages.dart';
 //현재 appbar가 화면 크기에 따라 늘어나는 부분은 향후 수정 예정
 
 class MainAppBar extends StatelessWidget with PreferredSizeWidget {
@@ -13,31 +12,22 @@ class MainAppBar extends StatelessWidget with PreferredSizeWidget {
     return AppBar(
       backgroundColor: Colors.white,
       centerTitle: true,
-      title: IconButton(
-        //현재 로고 사진에 흰 배경이 있어 위화감이 있으나 향후 수정할 예정
-        icon: Image.asset('image/icon/logo.jpg'),
-        onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context)=> const FirstPage())
-          );
-        },
-        iconSize: 90.0,
-      ),
+      title: Image.asset('image/icon/logo.png', width: 90.0,),
       leading: IconButton(
         onPressed: () {
           Navigator.pop(context);
         },
-        icon: const Icon(Icons.arrow_back_ios, color: Colors.grey,),
+        icon: const Icon(Icons.arrow_back_ios, color: Colors.grey, size: 30,),
       ),
       actions: [
         IconButton(
             onPressed: () {
               Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const MenuPage()
+                MaterialPageRoute(builder: (context) => const SendReport()
                 ),
               );
             },
-            icon: const Icon(Icons.menu, color: Colors.grey,)),
+            icon: const Icon(Icons.info_outline, color: Colors.grey, size: 30,)),
       ],
     );
   }
