@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'typeTest.dart';
-import 'appbar.dart';
+import 'TypeTest.dart';
+import 'AppBar.dart';
 import 'constants.dart';
+import 'package:subq/SubPages.dart';
 
 void main(){
   runApp(const subQ());
@@ -13,8 +14,7 @@ class subQ extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      // home: FirstPage(),
-      home: TestResultLoading(),
+      home: FirstPage(),
     );
   }
 }
@@ -143,17 +143,3 @@ void screenInfo(BuildContext context) {
   MediaQuery.of(context).devicePixelRatio; //화면 배율    double Ex> 4.0
   MediaQuery.of(context).padding.top;
 }
-
-//의견 보내기 페이지
-class SendReport extends StatelessWidget {
-  const SendReport({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: MainAppBar(),
-
-    );
-  }
-}
-
