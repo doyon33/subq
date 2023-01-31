@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'button.dart';
+import 'Button.dart';
 
 //자주 사용하는 텍스트, 위젯 스타일을 한 번에 관리
 const kLargeTextStyle =
@@ -44,23 +44,28 @@ var kButtonStyle =
         color: const Color(0xfffbefc3)
     );
 
+var kButtonStyleB = BoxDecoration(
+    borderRadius: BorderRadius.circular(30), color: const Color(0xffFFD440));
+
+var kCheckBoxStyle = BoxDecoration(
+  border: Border.all(color: Colors.black, width: 2.3)
+);
+
 //container with green background
 Widget buildContainer(String text1, String img, String text2) {
   return Container(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(20.0),
       margin: const EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
       alignment: Alignment.center,
       // height: 150.0,
       decoration: kContainerStyle,
       child: Column(children: [
-        Text(
-            text1,
-            style: kMediumTextStyle,
-        ),
         Image.asset(
           img,
-          height: 110.0,
+          height: 60,
+          fit: BoxFit.fill,
         ),
+        const SizedBox(height: 20,),
         Text(
           text2,
           style: kLargeTextStyle,
@@ -68,9 +73,9 @@ Widget buildContainer(String text1, String img, String text2) {
       ]));
 }
 
+// purpose 값 전달 기능 => 미구현
+String purpose = '';
 // light yellow button with text : move to another page
-// 서버에 데이터를 전송하는 등의 기능 가진 버튼은 동일한 decoration을 사용하나,
-// 이 양식으로 생성하지 않을 수 있음.
 Widget buildButton(BuildContext currentPage, Widget linkedPage, String text) {
   return InkWell(
     onTap: () {
@@ -80,14 +85,20 @@ Widget buildButton(BuildContext currentPage, Widget linkedPage, String text) {
     child: Container(
       padding: const EdgeInsets.all(15.0),
       margin: const EdgeInsets.only(top: 5.0, bottom: 5.0),
-      width: 140.0,
-      alignment: Alignment.center,
+      // alignment: Alignment.center,
       decoration: kButtonStyle,
       child: Text(
         text,
-        style: kMediumTextStyle,
+        style: kMediumBTextStyle,
       ),
     ),
+  );
+}
+
+Widget buildImgButton(String imgFile) {
+  return InkWell(
+    onTap: null,
+    child: Image.asset(imgFile, width: 53.0, height: 53.0,),
   );
 }
 
@@ -104,7 +115,7 @@ Widget buildTop(int pageNum, double progressValue, String category) {
           Padding(
             padding: const EdgeInsets.only(top: 10.0, right: 10.0),
             child: Text(
-              '$pageNum/12',
+              '$pageNum/13',
               style: kSmallTextStyle,
             ),
           )
@@ -135,7 +146,7 @@ Widget buildTop(int pageNum, double progressValue, String category) {
           const Padding(
             padding: EdgeInsets.only(left: 10.0),
             child: Text(
-              '잘 모르는 재료는 평가를 하지 않아도 됩니다.',
+              '잘 모르는 재료는 평가하지 않아도 됩니다.',
               style: kMediumTextStyle,
             ),
           )
