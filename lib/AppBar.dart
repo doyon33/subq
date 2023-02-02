@@ -1,35 +1,181 @@
 import 'package:flutter/material.dart';
 import 'package:subq/SubPages.dart';
-//현재 appbar가 화면 크기에 따라 늘어나는 부분은 향후 수정 예정
 
-class MainAppBar extends StatelessWidget with PreferredSizeWidget {
-  const MainAppBar({Key? key}) : super(key: key);
-
-  @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      backgroundColor: Colors.white,
-      centerTitle: true,
-      title: Image.asset('image/icon/logo.png', width: 90.0,),
-      leading: IconButton(
-        onPressed: () {
-          Navigator.pop(context);
-        },
-        icon: const Icon(Icons.arrow_back_ios, color: Colors.grey, size: 30,),
+Widget MainAppBar(BuildContext context, double typeNum) {
+  if (typeNum == 0) {
+    return Material(
+      child: Container(
+        color: Colors.white,
+        child: Column(
+          children: [
+            Container(
+              margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
+              padding: const EdgeInsets.all(5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.black,
+                        size: 30,
+                      )),
+                  Image.asset(
+                    'image/icon/logo.png',
+                    width: 90.0,
+                  ),
+                  IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const TermsPage()));
+                      },
+                      icon: const Icon(
+                        Icons.info_outline,
+                        color: Colors.black,
+                        size: 30,
+                      ))
+                ],
+              ),
+            ),
+            const Padding(
+                padding: EdgeInsets.only(left: 30, right: 30),
+                child: Divider(color: Colors.black, thickness: 2.0))
+          ],
+        ),
       ),
-      actions: [
-        IconButton(
-            onPressed: () {
-              Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const SendReport()
-                ),
-              );
-            },
-            icon: const Icon(Icons.info_outline, color: Colors.grey, size: 30,)),
-      ],
+    );
+  } else {
+    return Material(
+      child: Container(
+        color: Colors.white,
+        child: Column(
+          children: [
+            Container(
+              margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
+              padding: const EdgeInsets.all(5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.black,
+                        size: 30,
+                      )),
+                  Image.asset(
+                    'image/icon/logo.png',
+                    width: 90.0,
+                  ),
+                  IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const TermsPage()));
+                      },
+                      icon: const Icon(
+                        Icons.info_outline,
+                        color: Colors.black,
+                        size: 30,
+                      ))
+                ],
+              ),
+            ),
+            const Padding(
+                padding: EdgeInsets.only(left: 30, right: 30),
+                child: Divider(color: Colors.black, thickness: 2.0))
+          ],
+        ),
+      ),
     );
   }
 }
 
+
+Widget TestAppBar(BuildContext context, double typeNum) {
+  if (typeNum == 0) {
+    return Material(
+      child: Container(
+        color: Colors.white,
+        child: Column(
+          children: [
+            Container(
+              margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
+              padding: const EdgeInsets.all(5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.black,
+                        size: 30,
+                      )),
+                  Image.asset(
+                    'image/icon/logo.png',
+                    width: 90.0,
+                  ),
+                  const SizedBox(height: 10,)
+                ],
+              ),
+            ),
+            const Padding(
+                padding: EdgeInsets.only(left: 30, right: 30),
+                child: Divider(color: Colors.black, thickness: 2.0))
+          ],
+        ),
+      ),
+    );
+  } else {
+    return Material(
+      child: Container(
+        color: Colors.white,
+        child: Column(
+          children: [
+            Container(
+              margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
+              padding: const EdgeInsets.all(5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.black,
+                        size: 30,
+                      )),
+                  Image.asset(
+                    'image/icon/logo.png',
+                    width: 90.0,
+                  ),
+                  const SizedBox(height: 10,)
+                ],
+              ),
+            ),
+            const Padding(
+                padding: EdgeInsets.only(left: 30, right: 30),
+                child: Divider(color: Colors.black, thickness: 2.0))
+          ],
+        ),
+      ),
+    );
+  }
+}
