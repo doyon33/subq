@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:subq/SubPages.dart';
 import 'package:flutter/material.dart';
 import 'constants.dart';
@@ -63,159 +64,186 @@ class _TestResultState extends State<TestResult> {
   Widget build(BuildContext context) {
     return Material(
       color: materialColor,
-      child: Center(
-        child: Container(
-          width: screenCheck(context),
-          color: Colors.white,
-          child: Column(
-            children: [
-              MainAppBar(context, 1),
-              const Padding(
-                  padding: EdgeInsets.all(15.0),
-                  child: (Text(
-                    '추천 꿀조합은?',
-                    style: kLargeTextStyle,
-                  ))),
-              Container(
-                alignment: Alignment.center,
-                padding: const EdgeInsets.only(
-                    top: 10.0, bottom: 10.0, left: 20.0, right: 20.0),
-                margin:
-                    const EdgeInsets.only(left: 35.0, right: 35.0, bottom: 10),
-                decoration: kContainerStyle,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      '${displayDt?.menu}',
-                      style: kMediumBTextStyle,
-                    ),
-                    const SizedBox(
-                      height: 15.0,
-                    ),
-                    Image.asset(
-                      '${displayDt?.filename}',
-                      width: 150.0,
-                    ),
-                    const SizedBox(
-                      height: 15.0,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        RichText(
-                            text: TextSpan(children: [
-                          const TextSpan(text: '빵 : ', style: kMediumTextStyle),
-                          TextSpan(
-                              text: '${displayDt?.bread}',
-                              style: kMediumBTextStyle)
-                        ])),
-                        RichText(
-                            text: TextSpan(children: [
-                          const TextSpan(
-                              text: '메인 재료 : ', style: kMediumTextStyle),
-                          TextSpan(
-                              text: '${displayDt?.main}',
-                              style: kMediumBTextStyle)
-                        ])),
-                        RichText(
-                            text: TextSpan(children: [
-                          const TextSpan(
-                              text: '치즈 : ', style: kMediumTextStyle),
-                          TextSpan(
-                              text: '${displayDt?.cheese}',
-                              style: kMediumBTextStyle)
-                        ])),
-                        RichText(
-                            text: TextSpan(children: [
-                          const TextSpan(
-                              text: '소스 : ', style: kMediumTextStyle),
-                          TextSpan(
-                              text: '${displayDt?.sauce}',
-                              style: kMediumBTextStyle)
-                        ])),
-                      ],
-                    )
-                  ],
-                ),
-              ),
-              buildButton(context, MenuInfo(), '영양성분 보러가기'),
-              InkWell(
-                onTap: () {
-                  refreshData();
-                },
-                child: Container(
-                  padding: const EdgeInsets.all(15.0),
-                  margin: const EdgeInsets.only(top: 5.0, bottom: 5.0),
-                  decoration: kButtonStyleB,
+      child: Scaffold(
+        body: Center(
+          child: Container(
+            width: screenCheck(context),
+            color: Colors.white,
+            child: Column(
+              children: [
+                MainAppBar(context, 1),
+                const Padding(
+                    padding: EdgeInsets.all(15.0),
+                    child: (Text(
+                      '추천 꿀조합은?',
+                      style: kLargeTextStyle,
+                    ))),
+                Container(
+                  alignment: Alignment.center,
+                  padding: const EdgeInsets.only(
+                      top: 10.0, bottom: 10.0, left: 20.0, right: 20.0),
+                  margin: const EdgeInsets.only(
+                      left: 35.0, right: 35.0, bottom: 10),
+                  decoration: kContainerStyle,
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      const Text(
-                        '다른 꿀조합 보기',
+                      Text(
+                        '${displayDt?.menu}',
                         style: kMediumBTextStyle,
                       ),
-                      Text(
-                        '${displayNum + 1}/5',
-                        style: kSmallTextStyle,
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              Container(
-                  padding: const EdgeInsets.all(15.0),
-                  margin: const EdgeInsets.only(top: 5.0, bottom: 5.0),
-                  width: 380.0,
-                  decoration: BoxDecoration(
-                      color: const Color(0xffDCE9FD),
-                      borderRadius: BorderRadius.circular(30)),
-                  child: Column(
-                    children: [
-                      const Text(
-                        '친구에게 공유하기',
-                        style: kMediumTextStyle,
+                      const SizedBox(
+                        height: 15.0,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            //각 버튼에 해당하는 기능 => 미구현
-                            buildImgButton('image/icon/share.png'),
-                            buildImgButton('image/icon/kakao.png'),
-                            buildImgButton('image/icon/facebook.png'),
-                            buildImgButton('image/icon/twitter.png')
-                          ],
-                        ),
+                      Image.asset(
+                        '${displayDt?.filename}',
+                        width: 150.0,
+                      ),
+                      const SizedBox(
+                        height: 15.0,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          RichText(
+                              text: TextSpan(children: [
+                            const TextSpan(
+                                text: '빵 : ', style: kMediumTextStyle),
+                            TextSpan(
+                                text: '${displayDt?.bread}',
+                                style: kMediumBTextStyle)
+                          ])),
+                          RichText(
+                              text: TextSpan(children: [
+                            const TextSpan(
+                                text: '메인 재료 : ', style: kMediumTextStyle),
+                            TextSpan(
+                                text: '${displayDt?.main}',
+                                style: kMediumBTextStyle)
+                          ])),
+                          RichText(
+                              text: TextSpan(children: [
+                            const TextSpan(
+                                text: '치즈 : ', style: kMediumTextStyle),
+                            TextSpan(
+                                text: '${displayDt?.cheese}',
+                                style: kMediumBTextStyle)
+                          ])),
+                          RichText(
+                              text: TextSpan(children: [
+                            const TextSpan(
+                                text: '소스 : ', style: kMediumTextStyle),
+                            TextSpan(
+                                text: '${displayDt?.sauce}',
+                                style: kMediumBTextStyle)
+                          ])),
+                        ],
                       )
                     ],
-                  )),
-              const Padding(
-                padding: EdgeInsets.only(top: 20.0),
-                child: Text(
-                  '업그레이드 된 서브큐를 사용하고 싶으신가요?',
-                  style: kMediumTextStyle,
-                ),
-              ),
-              InkWell(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ReservationPage()));
-                },
-                child: Container(
-                  child: Text(
-                    '정식 런칭 사전 예약하기',
-                    style: kMediumTextStyle.copyWith(
-                        color: Colors.blueAccent,
-                        fontWeight: FontWeight.w700,
-                        decoration: TextDecoration.underline),
                   ),
                 ),
-              )
-            ],
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (currentPage) => const MenuInfo()));
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(15.0),
+                    margin: const EdgeInsets.only(top: 5.0, bottom: 5.0),
+                    decoration: kButtonStyle,
+                    child: const Text(
+                      '영양성분 보러가기',
+                      style: kMediumBTextStyle,
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    refreshData();
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(15.0),
+                    margin: const EdgeInsets.only(top: 5.0, bottom: 5.0),
+                    decoration: kButtonStyleB,
+                    child: Column(
+                      children: [
+                        const Text(
+                          '다른 꿀조합 보기',
+                          style: kMediumBTextStyle,
+                        ),
+                        Text(
+                          '${displayNum + 1}/5',
+                          style: kSmallTextStyle,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                    padding: const EdgeInsets.all(15.0),
+                    margin: const EdgeInsets.only(top: 5.0, bottom: 5.0),
+                    width: 250.0,
+                    decoration: BoxDecoration(
+                        color: const Color(0xffDCE9FD),
+                        borderRadius: BorderRadius.circular(30)),
+                    child: Column(
+                      children: [
+                        const Text(
+                          '친구에게 공유하기',
+                          style: kMediumTextStyle,
+                        ),
+                        Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: GestureDetector(
+                              onTap: () {
+                                Clipboard.setData(const ClipboardData(
+                                    text: 'misiq.subq.co.kr'));
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(SnackBar(
+                                        content: Text(
+                                          "✅ 복사되었습니다",
+                                          style: kMediumTextStyle.copyWith(
+                                              color: const Color(0xffffffff)),
+                                        ),
+                                        shape: const StadiumBorder(),
+                                        duration: const Duration(seconds: 2)));
+                              },
+                              child: Image.asset(
+                                'image/icon/share.png',
+                                width: 50,
+                                height: 50,
+                              ),
+                            ))
+                      ],
+                    )),
+                const Padding(
+                  padding: EdgeInsets.only(top: 20.0),
+                  child: Text(
+                    '업그레이드 된 서브큐를 사용하고 싶으신가요?',
+                    style: kMediumTextStyle,
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ReservationPage()));
+                  },
+                  child: Container(
+                    child: Text(
+                      '정식 런칭 사전 예약하기',
+                      style: kMediumTextStyle.copyWith(
+                          color: Colors.blueAccent,
+                          fontWeight: FontWeight.w700,
+                          decoration: TextDecoration.underline),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
@@ -280,6 +308,11 @@ class _MenuInfoState extends State<MenuInfo> {
                         Text('단백질(g)', style: kMediumTextStyle)
                       ],
                     ),
+                    Container(
+                      height: 180,
+                      width: 1.2,
+                      color: Colors.black,
+                    ),
                     Column(
                       children: const [
                         Text(
@@ -334,6 +367,11 @@ class _MenuInfoState extends State<MenuInfo> {
                         ),
                         Text('지방', style: kMediumTextStyle)
                       ],
+                    ),
+                    Container(
+                      height: 100,
+                      width: 1.2,
+                      color: Colors.black,
                     ),
                     Column(
                       // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
