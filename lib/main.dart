@@ -31,7 +31,18 @@ class FirstPage extends StatelessWidget {
           color: Colors.white,
           width: screenCheck(context),
           child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-            MainAppBar(context, 0),
+            MainAppBar(
+              context,
+              iconBtn: IconButton(
+                  onPressed: () {
+                    Navigator.maybePop(context);
+                  },
+                  icon: const Icon(
+                    Icons.arrow_back_ios,
+                    color: Colors.black,
+                    size: 30,
+                  )),
+            ),
             Container(
               padding: const EdgeInsets.all(10.0),
               margin: const EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
@@ -41,7 +52,7 @@ class FirstPage extends StatelessWidget {
               child: Text(
                 "당신의 샌드위치 취향은 어떨까요?\n\n개인맞춤 서브웨이 메뉴 추천 서비스\n#꿀조합 #맛 #건강",
                 textAlign: TextAlign.center,
-                style: kLargeTextStyle.copyWith(fontWeight: FontWeight.w400),
+                style: kLargeTextStyle,
               ),
             ),
             const SizedBox(
@@ -69,7 +80,7 @@ class FirstPage extends StatelessWidget {
                 decoration: kButtonStyle,
                 child: const Text(
                   '취향 분석 시작하기',
-                  style: kMediumTextStyle,
+                  style: kMediumBTextStyle,
                 ),
               ),
             )
@@ -133,4 +144,3 @@ Buttons btn_sauce13 = Buttons('SUBWAY_SAUCE_10021'); //후추
 Buttons btn_sauce14 = Buttons('SUBWAY_SAUCE_10013'); //스모크 바비큐
 //Italian dressing is not listed on topping code data
 Buttons btn_sauce15 = Buttons('SUBWAY_SAUCE_10022'); //이탈리안 드레싱
-
