@@ -18,65 +18,75 @@ class TermsPage extends StatelessWidget {
           color: Colors.white,
           child: Column(
             children: [
-              MainAppBar(context, 1),
+              MainAppBar(
+                context,
+                iconBtn: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.black,
+                      size: 30,
+                    )),
+              ),
               Expanded(
                   child: SingleChildScrollView(
-                    child: Container(
-                      padding: const EdgeInsets.only(
-                          top: 30, left: 30, right: 30),
-                      margin: const EdgeInsets.only(left: 10, right: 10),
-                      alignment: Alignment.centerLeft,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Padding(
-                            padding: EdgeInsets.only(top: 10, bottom: 10),
-                            child: Text(
-                              '[서브큐 이용안내]',
-                              style: kLargeTextStyle,
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(bottom: 20),
-                            child: Text(
-                              '\'서브큐\' 서비스(ver 1.0)는 서브웨이 메뉴선택시 도움을 드리고자 (주)팜킷에서 자체 개발한 임시 팝업 서비스 입니다.'
-                                  '본 서비스는 서브웨이 본사와 연관이 없으며, 제공하는 정보는 공개된 정보를 활용하여 참고용 목적으로 제공하고 있어 실제 정보와 상이 할 수 있습니다.'
-                                  '본 서비스를 이용하면서 입력하는 사전서비스신청을 제외한 모든 정보는 해당 서비스 종료시 모두 파기됩니다.',
-                              style: kSmallTextStyle,
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 10, bottom: 10),
-                            child: Text(
-                              '[버전 정보]',
-                              style: kLargeTextStyle,
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(bottom: 20),
-                            child: Text(
-                              'ver1.0',
-                              style: kSmallTextStyle,
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 10, bottom: 10),
-                            child: Text(
-                              '[이용 약관]',
-                              style: kLargeTextStyle,
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(bottom: 20),
-                            child: Text(
-                              terms,
-                              style: kSmallTextStyle,
-                            ),
-                          ),
-                        ],
+                child: Container(
+                  padding: const EdgeInsets.only(top: 30, left: 30, right: 30),
+                  margin: const EdgeInsets.only(left: 10, right: 10),
+                  alignment: Alignment.centerLeft,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      Padding(
+                        padding: EdgeInsets.only(top: 10, bottom: 10),
+                        child: Text(
+                          '[서브큐 이용안내]',
+                          style: kLargeTextStyle,
+                        ),
                       ),
-                    ),
-                  ))
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 20),
+                        child: Text(
+                          '\'서브큐\' 서비스(ver 1.0)는 서브웨이 메뉴선택시 도움을 드리고자 (주)팜킷에서 자체 개발한 임시 팝업 서비스 입니다.'
+                          '본 서비스는 서브웨이 본사와 연관이 없으며, 제공하는 정보는 공개된 정보를 활용하여 참고용 목적으로 제공하고 있어 실제 정보와 상이 할 수 있습니다.'
+                          '본 서비스를 이용하면서 입력하는 사전서비스신청을 제외한 모든 정보는 해당 서비스 종료시 모두 파기됩니다.',
+                          style: kSmallTextStyle,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 10, bottom: 10),
+                        child: Text(
+                          '[버전 정보]',
+                          style: kLargeTextStyle,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 20),
+                        child: Text(
+                          'ver1.0',
+                          style: kSmallTextStyle,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 10, bottom: 10),
+                        child: Text(
+                          '[이용 약관]',
+                          style: kLargeTextStyle,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 20),
+                        child: Text(
+                          terms,
+                          style: kSmallTextStyle,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ))
             ],
           ),
         ),
@@ -102,7 +112,6 @@ class ReservationPage extends StatefulWidget {
 }
 
 class _ReservationPageState extends State<ReservationPage> {
-
   final _emailEditCtr = TextEditingController();
   final _phoneEditCtr = TextEditingController();
   final _opinionEditCtr = TextEditingController();
@@ -133,41 +142,52 @@ class _ReservationPageState extends State<ReservationPage> {
       color: materialColor,
       child: Center(
           child: Container(
-            color: Colors.white,
-            width: screenCheck(context),
-            child: (ListView(children: [
-              MainAppBar(context, 1),
-              const SizedBox(
-                height: 30,
-              ),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-                const SizedBox(
-                  width: 10,
-                ),
-                Text(
-                  '정식런칭 예약 신청',
-                  style: kLargeTextStyle.copyWith(fontSize: 25),
-                ),
-                const SizedBox(
-                  width: 10,
-                )
-              ]),
-              Container(
-                decoration: kContainerStyle,
-                padding: const EdgeInsets.all(20),
-                margin: const EdgeInsets.only(
-                    top: 20, bottom: 20, left: 20, right: 20),
-                child: Text(
-                  '\n정식 런칭 예약을 신청하시면\n런칭 소식을 받으실 수 있습니다.\n아래 신청서를 작성해주시면 감사하겠습니다.\n',
-                  style: kMediumTextStyle.copyWith(height: 1.5),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Padding(
-                  padding: const EdgeInsets.all(15),
-                  child:
-                  Column(
-                      crossAxisAlignment: CrossAxisAlignment.start, children: [
+        color: Colors.white,
+        width: screenCheck(context),
+        child: (ListView(children: [
+          MainAppBar(
+            context,
+            iconBtn: IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: const Icon(
+                  Icons.arrow_back_ios,
+                  color: Colors.black,
+                  size: 30,
+                )),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            const SizedBox(
+              width: 10,
+            ),
+            Text(
+              '정식런칭 예약 신청',
+              style: kLargeTextStyle.copyWith(fontSize: 25),
+            ),
+            const SizedBox(
+              width: 10,
+            )
+          ]),
+          Container(
+            decoration: kContainerStyle,
+            padding: const EdgeInsets.all(20),
+            margin:
+                const EdgeInsets.only(top: 20, bottom: 20, left: 20, right: 20),
+            child: Text(
+              '\n정식 런칭 예약을 신청하시면\n런칭 소식을 받으실 수 있습니다.\n아래 신청서를 작성해주시면 감사하겠습니다.\n',
+              style: kMediumTextStyle.copyWith(height: 1.5),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Padding(
+              padding: const EdgeInsets.all(15),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
                     const Padding(
                       padding: EdgeInsets.only(left: 20, bottom: 10),
                       child: Text(
@@ -580,8 +600,8 @@ class _ReservationPageState extends State<ReservationPage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (
-                                        context) => const CompletePage()));
+                                    builder: (context) =>
+                                        const CompletePage()));
                           },
                           child: Container(
                             padding: const EdgeInsets.all(15.0),
@@ -599,8 +619,8 @@ class _ReservationPageState extends State<ReservationPage> {
                       ],
                     )
                   ]))
-            ])),
-          )),
+        ])),
+      )),
     );
   }
 }
@@ -610,7 +630,6 @@ class CompletePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     //print for checking data
     if (kDebugMode) {
       print('email(SubPages.dart:93) : $email');
@@ -628,41 +647,60 @@ class CompletePage extends StatelessWidget {
           width: screenCheck(context),
           color: Colors.white,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              MainAppBar(context, 1),
-              Padding(
-                padding: const EdgeInsets.only(top: 60, bottom: 40),
-                child: Image.asset('image/icon/complete.png'),
+              MainAppBar(
+                context,
+                iconBtn: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.black,
+                      size: 30,
+                    )),
               ),
-              const Text(
-                '정식 런칭 예약 신청이 완료되었습니다.',
-                style: kLargeTextStyle,
-              ),
-              Container(
-                padding: const EdgeInsets.all(15),
-                margin: const EdgeInsets.all(20),
-                decoration: kContainerStyle,
-                child: const Text(
-                  '신청해주셔서 감사합니다!',
-                  style: kMediumTextStyle,
-                ),
-              ),
-              InkWell(
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (currentPage) => const FirstPage()));
-                },
-                child: Container(
-                  padding: const EdgeInsets.all(15.0),
-                  margin: const EdgeInsets.only(top: 5.0, bottom: 5.0),
-                  // alignment: Alignment.center,
-                  decoration: kButtonStyle,
-                  child: const Text(
-                    '홈으로 돌아가기',
-                    style: kMediumBTextStyle,
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 60, bottom: 40),
+                    child: Image.asset('image/icon/complete.png'),
                   ),
-                ),
-              )
+                  const Text(
+                    '정식 런칭 예약 신청이 완료되었습니다.',
+                    style: kLargeTextStyle,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(15),
+                    margin: const EdgeInsets.all(20),
+                    decoration: kContainerStyle,
+                    child: const Text(
+                      '신청해 주셔서 감사합니다!',
+                      style: kMediumTextStyle,
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (currentPage) => const FirstPage()));
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(15.0),
+                      margin: const EdgeInsets.only(top: 5.0, bottom: 5.0),
+                      // alignment: Alignment.center,
+                      decoration: kButtonStyle,
+                      child: const Text(
+                        '홈으로 돌아가기',
+                        style: kMediumBTextStyle,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              const SizedBox(height: 250)
             ],
           ),
         ),
