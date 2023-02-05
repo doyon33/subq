@@ -28,17 +28,17 @@ class TestStart extends StatelessWidget {
                 height: 5.0,
               ),
               buildButton(context, const TestBread1(), '  영양 균형  ',
-                  func: purposeCode(7)),
+                  func: purposeCode(0)),
               buildButton(context, const TestBread1(), '  저탄수화물  ',
                   func: purposeCode(1)),
               buildButton(context, const TestBread1(), '  고단백질  ',
-                  func: purposeCode(8)),
-              buildButton(context, const TestBread1(), '  저칼로리  ',
                   func: purposeCode(2)),
-              buildButton(context, const TestBread1(), '  저염  ',
+              buildButton(context, const TestBread1(), '  저칼로리  ',
                   func: purposeCode(3)),
+              buildButton(context, const TestBread1(), '  저염  ',
+                  func: purposeCode(4)),
               buildButton(context, const TestBread1(), '  맛 우선  ',
-                  func: purposeCode(4))
+                  func: purposeCode(5))
             ],
           ),
         ),
@@ -910,19 +910,11 @@ class _TestSauce4State extends State<TestSauce4> {
                 buildButtons(btn_sauce14, updateData),
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg('이탈리안 드레싱', 'image/sauce/italian_dressing.png',
-                    '#상큼함 #샐러드와_찰떡궁합'),
-                buildButtons(btn_sauce15, updateData)
-              ],
-            ),
             buildButton(context, const TestResultLoading(), '다음으로',
                 func: printData(
                     data1: btn_sauce13.getDataCode(),
                     data2: btn_sauce14.getDataCode(),
-                    data3: btn_sauce15.getDataCode()))
+                    ))
           ]),
         ),
       ),
