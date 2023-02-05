@@ -227,7 +227,7 @@ class _TestResultState extends State<TestResult> {
                             child: GestureDetector(
                               onTap: () {
                                 Clipboard.setData(const ClipboardData(
-                                    text: 'misiq.subq.co.kr'));
+                                    text: 'https://subq.misiq.kr'));
                                 ScaffoldMessenger.of(context)
                                     .showSnackBar(SnackBar(
                                         content: Text(
