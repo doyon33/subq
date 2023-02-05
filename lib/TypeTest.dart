@@ -21,7 +21,7 @@ class TestStart extends StatelessWidget {
           color: Colors.white,
           child: Column(
             children: [
-              MainAppBar(context, 1),
+              TestAppBar(context),
               buildContainer(
                   '', 'image/icon/question.png', '어떤 목적을 중심으로\n추천받고 싶으신가요?\n'),
               const SizedBox(
@@ -65,7 +65,7 @@ class _TestBread1State extends State<TestBread1> {
           width: screenCheck(context),
           color: Colors.white,
           child: Column(children: [
-            TestAppBar(context, 1),
+            TestAppBar(context),
             buildTop(1, 0.076, '빵'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -142,7 +142,7 @@ class _TestBread2State extends State<TestBread2> {
           width: screenCheck(context),
           color: Colors.white,
           child: Column(children: [
-            TestAppBar(context, 1),
+            TestAppBar(context),
             buildTop(2, 0.153, '빵'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -200,7 +200,7 @@ class _TestMain1State extends State<TestMain1> {
           width: screenCheck(context),
           color: Colors.white,
           child: Column(children: [
-            TestAppBar(context, 1),
+            TestAppBar(context),
             buildTop(3, 0.23, '메인 메뉴'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -272,7 +272,7 @@ class _TestMain2State extends State<TestMain2> {
           width: screenCheck(context),
           color: Colors.white,
           child: Column(children: [
-            TestAppBar(context, 1),
+            TestAppBar(context),
             buildTop(4, 0.307, '메인 메뉴'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -344,7 +344,7 @@ class _TestMain3State extends State<TestMain3> {
           width: screenCheck(context),
           color: Colors.white,
           child: Column(children: [
-            TestAppBar(context, 1),
+            TestAppBar(context),
             buildTop(5, 0.384, '메인 메뉴'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -416,7 +416,7 @@ class _TestCheeseState extends State<TestCheese> {
           width: screenCheck(context),
           color: Colors.white,
           child: Column(children: [
-            TestAppBar(context, 1),
+            TestAppBar(context),
             buildTop(6, 0.46, '치즈'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -480,7 +480,7 @@ class _TestVege1State extends State<TestVege1> {
           width: screenCheck(context),
           color: Colors.white,
           child: Column(children: [
-            TestAppBar(context, 1),
+            TestAppBar(context),
             buildTop(7, 0.53, '야채'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -552,7 +552,7 @@ class _TestVege2State extends State<TestVege2> {
           width: screenCheck(context),
           color: Colors.white,
           child: Column(children: [
-            TestAppBar(context, 1),
+            TestAppBar(context),
             buildTop(8, 0.615, '야채'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -624,7 +624,7 @@ class _TestVege3State extends State<TestVege3> {
           width: screenCheck(context),
           color: Colors.white,
           child: Column(children: [
-            TestAppBar(context, 1),
+            TestAppBar(context),
             buildTop(9, 0.692, '야채'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -671,7 +671,7 @@ class _TestSauce1State extends State<TestSauce1> {
           width: screenCheck(context),
           color: Colors.white,
           child: Column(children: [
-            TestAppBar(context, 1),
+            TestAppBar(context),
             buildTop(10, 0.769, '소스'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -745,7 +745,7 @@ class _TestSauce2State extends State<TestSauce2> {
           width: screenCheck(context),
           color: Colors.white,
           child: Column(children: [
-            TestAppBar(context, 1),
+            TestAppBar(context),
             buildTop(11, 0.846, '소스'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -821,7 +821,7 @@ class _TestSauce3State extends State<TestSauce3> {
           width: screenCheck(context),
           color: Colors.white,
           child: Column(children: [
-            TestAppBar(context, 1),
+            TestAppBar(context),
             buildTop(12, 0.923, '소스'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -893,7 +893,7 @@ class _TestSauce4State extends State<TestSauce4> {
           width: screenCheck(context),
           color: Colors.white,
           child: Column(children: [
-            TestAppBar(context, 1),
+            TestAppBar(context),
             buildTop(13, 1, '소스'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -956,7 +956,7 @@ class _TestResultLoadingState extends State<TestResultLoading> {
     super.initState();
     Timer(const Duration(seconds: 2), () {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => TestResult()));
+          context, MaterialPageRoute(builder: (context) => const TestResult()));
     });
   }
 
@@ -970,7 +970,7 @@ class _TestResultLoadingState extends State<TestResultLoading> {
           color: Colors.white,
           child: Column(
             children: [
-              TestAppBar(context, 1),
+              TestAppBar(context),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
@@ -978,7 +978,7 @@ class _TestResultLoadingState extends State<TestResultLoading> {
                     height: 10.0,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 10.0, right: 10.0),
+                    padding: EdgeInsets.only(top: 5.0, right: 30.0),
                     child: Text(
                       '13/13',
                       style: kSmallTextStyle,
@@ -986,15 +986,20 @@ class _TestResultLoadingState extends State<TestResultLoading> {
                   )
                 ],
               ),
-              const Padding(
-                padding: EdgeInsets.only(bottom: 10.0, left: 10.0, right: 10.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                  child: LinearProgressIndicator(
-                    valueColor: AlwaysStoppedAnimation(Color(0xfff1c323)),
-                    backgroundColor: Color(0xffd6d6d6),
-                    value: 1,
-                    minHeight: 10.0,
+              Padding(
+                padding: const EdgeInsets.only(bottom: 10.0, left: 30.0, right: 30.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(width: 2, color: const Color(0xfff1c323)),
+                      borderRadius: const BorderRadius.all(Radius.circular(10))),
+                  child: const ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    child: LinearProgressIndicator(
+                      valueColor: AlwaysStoppedAnimation(Color(0xfff1c323)),
+                      backgroundColor: Color(0xffffffff),
+                      value: 1,
+                      minHeight: 10.0,
+                    ),
                   ),
                 ),
               ),
@@ -1003,7 +1008,7 @@ class _TestResultLoadingState extends State<TestResultLoading> {
               ),
               const Text(
                 '취향을 분석하기 위한 재료 평가가 끝났어요.\n\n서브큐가 열심히 분석중이에요.',
-                style: kMediumTextStyle,
+                style: kMediumBTextStyle,
                 textAlign: TextAlign.center,
               ),
               const SizedBox(
