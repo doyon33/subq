@@ -56,6 +56,7 @@ class TestResult extends StatefulWidget {
 }
 
 class _TestResultState extends State<TestResult> {
+  final GlobalKey _containerKey = GlobalKey();
   int displayNum = 0;
   var displayDt = db.result1;
   var resultList = [db.result1, db.result2, db.result3, db.result4, db.result5];
@@ -71,7 +72,16 @@ class _TestResultState extends State<TestResult> {
             color: Colors.white,
             child: Column(
               children: [
-                MainAppBar(context, 1),
+                MainAppBar(context, iconBtn: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.black,
+                      size: 30,
+                    )),),
                 const Padding(
                     padding: EdgeInsets.all(15.0),
                     child: (Text(
@@ -81,17 +91,22 @@ class _TestResultState extends State<TestResult> {
                 Container(
                   alignment: Alignment.center,
                   padding: const EdgeInsets.only(
-                      top: 10.0, bottom: 10.0, left: 20.0, right: 20.0),
+                      top: 10.0, bottom: 20.0, left: 20.0, right: 20.0),
                   margin: const EdgeInsets.only(
                       left: 35.0, right: 35.0, bottom: 10),
                   decoration: kContainerStyle,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
-                        '${displayDt?.menu}',
-                        style: kMediumBTextStyle,
-                      ),
+                      Stack(alignment: Alignment.bottomCenter, children: [
+                        Container(
+                            color: Colors.yellowAccent, width: 100, height: 10),
+                        Text(
+                          '${displayDt?.menu}',
+                          style: kLargeTextStyle,
+                          textAlign: TextAlign.center,
+                        ),
+                      ]),
                       const SizedBox(
                         height: 15.0,
                       ),
@@ -137,26 +152,38 @@ class _TestResultState extends State<TestResult> {
                                 text: '${displayDt?.sauce}',
                                 style: kMediumBTextStyle)
                           ])),
+                          const SizedBox(height: 25),
+                          Stack(
+                            alignment: Alignment.bottomCenter,
+                            children: [
+                              Container(
+                                width: 150,
+                                height: 10,
+                                color: Colors.yellowAccent,
+                              ),
+                              const Text(
+                                '영양성분 보러가기',
+                                style: kMediumBTextStyle,
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const MenuInfo()));
+                                },
+                                child: Container(
+                                  color: Colors.transparent,
+                                  width: 200,
+                                  height: 20,
+                                ),
+                              ),
+                            ],
+                          )
                         ],
                       )
                     ],
-                  ),
-                ),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (currentPage) => const MenuInfo()));
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.all(15.0),
-                    margin: const EdgeInsets.only(top: 5.0, bottom: 5.0),
-                    decoration: kButtonStyle,
-                    child: const Text(
-                      '영양성분 보러가기',
-                      style: kMediumBTextStyle,
-                    ),
                   ),
                 ),
                 InkWell(
@@ -166,7 +193,7 @@ class _TestResultState extends State<TestResult> {
                   child: Container(
                     padding: const EdgeInsets.all(15.0),
                     margin: const EdgeInsets.only(top: 5.0, bottom: 5.0),
-                    decoration: kButtonStyleB,
+                    decoration: kButtonStyle,
                     child: Column(
                       children: [
                         const Text(
@@ -182,9 +209,10 @@ class _TestResultState extends State<TestResult> {
                   ),
                 ),
                 Container(
-                    padding: const EdgeInsets.all(15.0),
+                    padding: const EdgeInsets.only(
+                        top: 10, bottom: 5, left: 15, right: 15),
                     margin: const EdgeInsets.only(top: 5.0, bottom: 5.0),
-                    width: 250.0,
+                    // width: 250.0,
                     decoration: BoxDecoration(
                         color: const Color(0xffDCE9FD),
                         borderRadius: BorderRadius.circular(30)),
@@ -192,10 +220,10 @@ class _TestResultState extends State<TestResult> {
                       children: [
                         const Text(
                           '친구에게 공유하기',
-                          style: kMediumTextStyle,
+                          style: kMediumBTextStyle,
                         ),
                         Padding(
-                            padding: const EdgeInsets.all(10.0),
+                            padding: const EdgeInsets.all(5.0),
                             child: GestureDetector(
                               onTap: () {
                                 Clipboard.setData(const ClipboardData(
@@ -261,6 +289,21 @@ class _TestResultState extends State<TestResult> {
       }
     });
   }
+
+// 메뉴 이름 길이에 따라 컨테이너 길이를 다르게 하기 위한 함수, 구현 실패
+// void getWidth() {
+//   setState(() {
+//     print('getWidth() get called');
+//     if (_containerKey.currentContext != null) {
+//       final RenderBox renderBox =
+//           _containerKey.currentContext!.findRenderObject() as RenderBox;
+//       w = renderBox.size.width;
+//       print('return w = $w');
+//     } else {
+//       print('w is null');
+//     }
+//   });
+// }
 }
 
 //menu info
@@ -283,7 +326,7 @@ class _MenuInfoState extends State<MenuInfo> {
           child: (Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              MainAppBar(context, 1),
+              MainAppBar(context),
               const Padding(
                 padding: EdgeInsets.only(top: 30.0, bottom: 10.0),
                 child: Text(
