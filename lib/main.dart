@@ -142,5 +142,4 @@ Buttons btn_sauce11 = Buttons('SUBWAY_SAUCE_10009'); //레드와인식초
 Buttons btn_sauce12 = Buttons('SUBWAY_SAUCE_10020'); //소금
 Buttons btn_sauce13 = Buttons('SUBWAY_SAUCE_10021'); //후추
 Buttons btn_sauce14 = Buttons('SUBWAY_SAUCE_10013'); //스모크 바비큐
-//Italian dressing is not listed on topping code data
-Buttons btn_sauce15 = Buttons('SUBWAY_SAUCE_10022'); //이탈리안 드레싱
+
