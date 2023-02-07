@@ -72,16 +72,19 @@ class _TestResultState extends State<TestResult> {
             color: Colors.white,
             child: Column(
               children: [
-                MainAppBar(context, iconBtn: IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                      Navigator.pop(context);
-                    },
-                    icon: const Icon(
-                      Icons.arrow_back_ios,
-                      color: Colors.black,
-                      size: 30,
-                    )),),
+                MainAppBar(
+                  context,
+                  iconBtn: IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.black,
+                        size: 30,
+                      )),
+                ),
                 const Padding(
                     padding: EdgeInsets.all(15.0),
                     child: (Text(
@@ -326,7 +329,18 @@ class _MenuInfoState extends State<MenuInfo> {
           child: (Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              MainAppBar(context),
+              MainAppBar(
+                context,
+                iconBtn: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.black,
+                      size: 30,
+                    )),
+              ),
               const Padding(
                 padding: EdgeInsets.only(top: 30.0, bottom: 10.0),
                 child: Text(
