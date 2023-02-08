@@ -1,4 +1,5 @@
 import 'package:flutter/services.dart';
+import 'package:subq/Seokhwan.dart';
 import 'package:subq/SubPages.dart';
 import 'package:flutter/material.dart';
 import 'constants.dart';
@@ -63,6 +64,7 @@ class _TestResultState extends State<TestResult> {
 
   @override
   Widget build(BuildContext context) {
+    Utils.fetchResult();
     return Material(
       color: materialColor,
       child: Scaffold(

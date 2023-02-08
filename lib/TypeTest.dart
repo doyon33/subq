@@ -27,18 +27,22 @@ class TestStart extends StatelessWidget {
               const SizedBox(
                 height: 5.0,
               ),
+              // SEOKHWAN
+              // purposeCode(5) 와 같이 실행하면
+              // purposeCode(5) 함수가 그대로 실행됨.
+              // 따라서, 이전 코드에서는 항상 purpose 가 5로 남음
               buildButton(context, const TestBread1(), '  영양 균형  ',
-                  func: purposeCode(0)),
+                  func: purposeCode, code: 0),
               buildButton(context, const TestBread1(), '  저탄수화물  ',
-                  func: purposeCode(1)),
+                  func: purposeCode, code: 1),
               buildButton(context, const TestBread1(), '  고단백질  ',
-                  func: purposeCode(2)),
+                  func: purposeCode, code: 2),
               buildButton(context, const TestBread1(), '  저칼로리  ',
-                  func: purposeCode(3)),
+                  func: purposeCode, code: 3),
               buildButton(context, const TestBread1(), '  저염  ',
-                  func: purposeCode(4)),
+                  func: purposeCode, code: 4),
               buildButton(context, const TestBread1(), '  맛 우선  ',
-                  func: purposeCode(5))
+                  func: purposeCode, code: 5),
             ],
           ),
         ),
@@ -912,9 +916,9 @@ class _TestSauce4State extends State<TestSauce4> {
             ),
             buildButton(context, const TestResultLoading(), '다음으로',
                 func: printData(
-                    data1: btn_sauce13.getDataCode(),
-                    data2: btn_sauce14.getDataCode(),
-                    ))
+                  data1: btn_sauce13.getDataCode(),
+                  data2: btn_sauce14.getDataCode(),
+                ))
           ]),
         ),
       ),
@@ -979,11 +983,14 @@ class _TestResultLoadingState extends State<TestResultLoading> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 10.0, left: 30.0, right: 30.0),
+                padding: const EdgeInsets.only(
+                    bottom: 10.0, left: 30.0, right: 30.0),
                 child: Container(
                   decoration: BoxDecoration(
-                      border: Border.all(width: 2, color: const Color(0xfff1c323)),
-                      borderRadius: const BorderRadius.all(Radius.circular(10))),
+                      border:
+                          Border.all(width: 2, color: const Color(0xfff1c323)),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(10))),
                   child: const ClipRRect(
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                     child: LinearProgressIndicator(
