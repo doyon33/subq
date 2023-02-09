@@ -127,7 +127,6 @@ class Utils {
     //DataBase의 인스턴스인 db(line:56)의 멤버함수를 통해 저장
     db.addData(s);
 
-    //실행 결과, 아래 두 줄은 잘 print되고 리스트에 add도 잘 되었습니다
     print('data added ::: ');
     print('length of list : ${db.dataList.length}');
   }

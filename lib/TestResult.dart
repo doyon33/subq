@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 import 'constants.dart';
 import 'package:subq/AppBar.dart';
 
-//TestResult 페이지로 넘어오면서, db.dataList의 값들이 사라집니다...
-//Utils 클래스 내부에서 데이터를 저장했기 때문일까요?
 
 //test result page
 class TestResult extends StatefulWidget {
@@ -18,6 +16,7 @@ class TestResult extends StatefulWidget {
 
 class _TestResultState extends State<TestResult> {
   int displayNum = 0;
+  var displayData = db.dataList[0];
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +63,7 @@ class _TestResultState extends State<TestResult> {
                         Container(
                             color: Colors.yellowAccent, width: 100, height: 10),
                         Text(
-                          '${db.dataList[displayNum].menu}',
+                          '${displayData.menu}',
                           style: kLargeTextStyle,
                           textAlign: TextAlign.center,
                         ),
@@ -73,7 +72,7 @@ class _TestResultState extends State<TestResult> {
                         height: 15.0,
                       ),
                       Image.asset(
-                        '${db.dataList[displayNum].filename}',
+                        '${displayData.filename}',
                         width: 150.0,
                       ),
                       const SizedBox(
@@ -87,7 +86,7 @@ class _TestResultState extends State<TestResult> {
                             const TextSpan(
                                 text: '빵 : ', style: kMediumTextStyle),
                             TextSpan(
-                                text: '${db.dataList[displayNum].bread}',
+                                text: '${displayData.bread}',
                                 style: kMediumBTextStyle)
                           ])),
                           RichText(
@@ -95,7 +94,7 @@ class _TestResultState extends State<TestResult> {
                             const TextSpan(
                                 text: '메인 재료 : ', style: kMediumTextStyle),
                             TextSpan(
-                                text: '${db.dataList[displayNum].main}',
+                                text: '${displayData.main}',
                                 style: kMediumBTextStyle)
                           ])),
                           RichText(
@@ -103,7 +102,7 @@ class _TestResultState extends State<TestResult> {
                             const TextSpan(
                                 text: '치즈 : ', style: kMediumTextStyle),
                             TextSpan(
-                                text: '${db.dataList[displayNum].cheese}',
+                                text: '${displayData.cheese}',
                                 style: kMediumBTextStyle)
                           ])),
                           RichText(
@@ -111,7 +110,7 @@ class _TestResultState extends State<TestResult> {
                             const TextSpan(
                                 text: '소스 : ', style: kMediumTextStyle),
                             TextSpan(
-                                text: '${db.dataList[displayNum].sauce}',
+                                text: '${displayData.sauce}',
                                 style: kMediumBTextStyle)
                           ])),
                           const SizedBox(height: 25),
@@ -133,7 +132,7 @@ class _TestResultState extends State<TestResult> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              const MenuInfo()));
+                                              MenuInfo(displayData)));
                                 },
                                 child: Container(
                                   color: Colors.transparent,
@@ -150,7 +149,7 @@ class _TestResultState extends State<TestResult> {
                 ),
                 InkWell(
                   onTap: () {
-                    // refreshData();
+                    refreshData();
                   },
                   child: Container(
                     padding: const EdgeInsets.all(15.0),
@@ -244,10 +243,10 @@ class _TestResultState extends State<TestResult> {
     setState(() {
       if (displayNum < 4) {
         displayNum++;
-        // displayDt = db.dataList[displayNum];
+        displayData = db.dataList[displayNum];
       } else {
         displayNum = 0;
-        // displayDt = db.dataList[displayNum];
+        displayData = db.dataList[displayNum];
       }
     });
   }
@@ -270,7 +269,9 @@ class _TestResultState extends State<TestResult> {
 
 //menu info
 class MenuInfo extends StatefulWidget {
-  const MenuInfo({Key? key}) : super(key: key);
+  final TestResultData displayData;
+
+  const MenuInfo(this.displayData);
 
   @override
   State<MenuInfo> createState() => _MenuInfoState();
@@ -300,10 +301,10 @@ class _MenuInfoState extends State<MenuInfo> {
                       size: 30,
                     )),
               ),
-              const Padding(
-                padding: EdgeInsets.only(top: 30.0, bottom: 10.0),
+              Padding(
+                padding: const EdgeInsets.only(top: 30.0, bottom: 10.0),
                 child: Text(
-                  'menu 영양성분',
+                  '${widget.displayData.menu} 영양성분',
                   style: kLargeTextStyle,
                 ),
               ),
@@ -330,25 +331,25 @@ class _MenuInfoState extends State<MenuInfo> {
                       color: Colors.black,
                     ),
                     Column(
-                      children: const [
+                      children: [
                         Text(
-                          '416kcal\n',
+                          '${widget.displayData.kcal}\n',
                           style: kMediumTextStyle,
                         ),
                         Text(
-                          '92g\n',
+                          '${widget.displayData.carbo}\n',
                           style: kMediumTextStyle,
                         ),
                         Text(
-                          '4.8g\n',
+                          '${widget.displayData.fat}\n',
                           style: kMediumTextStyle,
                         ),
                         Text(
-                          '1.2g\n',
+                          '${widget.displayData.dietaryFiber}\n',
                           style: kMediumTextStyle,
                         ),
                         Text(
-                          '16.4g',
+                          '${widget.displayData.protein}',
                           style: kMediumTextStyle,
                         ),
                       ],
