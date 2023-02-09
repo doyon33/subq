@@ -6,6 +6,7 @@ import 'constants.dart';
 import 'Button.dart';
 import 'dart:async';
 import 'TestResult.dart';
+import 'Seokhwan.dart';
 
 //first page of test
 class TestStart extends StatelessWidget {
@@ -947,13 +948,20 @@ class TestResultLoading extends StatefulWidget {
 }
 
 class _TestResultLoadingState extends State<TestResultLoading> {
+  Future<void> fetchDataAndMove(_) async {
+    await Utils.fetchResult();
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const TestResult()));
+  }
+
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 2), () {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const TestResult()));
-    });
+    WidgetsBinding.instance.addPostFrameCallback(fetchDataAndMove);
+    // Timer(const Duration(seconds: 2), () {
+    //   Navigator.push(
+    //       context, MaterialPageRoute(builder: (context) => const TestResult()));
+    // });
   }
 
   @override

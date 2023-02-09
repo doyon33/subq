@@ -46,7 +46,6 @@ class TestResultData {
 
 //테스트 결과를 바탕으로 생성되는 추천 메뉴 5가지를 담은 데이터베이스 클래스
 class Database {
-
   List dataList = [];
 
   void addData(TestResultData d) {
@@ -56,7 +55,6 @@ class Database {
 
 //Database 클래스의 인스턴스 생성
 var db = Database();
-
 
 class Utils {
   static Map<String, int> eval = {};
@@ -111,7 +109,6 @@ class Utils {
     print("포화지방: ${jboj['nutrition']['fat']}");
     print("식이섬유: ${jboj['nutrition']['dietary_fiber']}");
 
-
     //TestResultData 클래스의 인스턴스를 생성
     var s = TestResultData(
         jboj['main'],
@@ -136,6 +133,7 @@ class Utils {
   }
 
   static Future fetchResult() async {
+    db.dataList.clear();
     var json = await call();
     for (int i = 0; i < json.length; i++) {
       printMenu(json[i]);

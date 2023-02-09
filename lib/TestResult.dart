@@ -17,12 +17,11 @@ class TestResult extends StatefulWidget {
 }
 
 class _TestResultState extends State<TestResult> {
-
   int displayNum = 0;
 
   @override
   Widget build(BuildContext context) {
-    Utils.fetchResult();
+    //Utils.fetchResult();
     return Material(
       color: materialColor,
       child: Scaffold(
