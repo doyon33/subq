@@ -5,48 +5,8 @@ import 'package:flutter/material.dart';
 import 'constants.dart';
 import 'package:subq/AppBar.dart';
 
-//테스트 결과로 나온 추천 메뉴 정보 클래스
-class TestResults {
-  String? menu;
-  String? bread;
-  String? main;
-  String? cheese;
-  String? sauce;
-
-  String? filename; //이미지 파일
-
-  TestResults(String this.menu, String this.bread, String this.main,
-      String this.cheese, String this.sauce, String this.filename);
-}
-
-//테스트 결과를 바탕으로 생성되는 추천 메뉴 5가지를 담은 데이터베이스 클래스
-class DataBase {
-  TestResults? result1;
-  TestResults? result2;
-  TestResults? result3;
-  TestResults? result4;
-  TestResults? result5;
-
-  DataBase(
-      TestResults this.result1,
-      TestResults this.result2,
-      TestResults this.result3,
-      TestResults this.result4,
-      TestResults this.result5);
-}
-
-//테스트용 데이터베이스
-var result1 = TestResults(
-    '에그마요', '화이트', '에그마요', '아메리칸 치즈', '랜치 + 스위트 칠리', 'image/menu/eggmayo.png');
-var result2 = TestResults(
-    '쉬림프', '플랫브레드', '쉬림프', '슈레드 치즈', '랜치 + 핫 칠리 + 후추', 'image/menu/shrimp.png');
-var result3 = TestResults('바베큐', '파마산 오레가노', '바베큐', '아메리칸 치즈', '스모크 바베큐 + 핫 칠리',
-    'image/menu/bbq.png');
-var result4 = TestResults(
-    '스테이크', '하티', '스테이크', '모짜렐라 치즈', '소금 + 홀스래디쉬', 'image/menu/steak.png');
-var result5 = TestResults(
-    '참치', '허니오트', '참치', '아메리칸 치즈', '마요네즈 + 스위트 칠리', 'image/menu/tuna.png');
-var db = DataBase(result1, result2, result3, result4, result5);
+//TestResult 페이지로 넘어오면서, db.dataList의 값들이 사라집니다...
+//Utils 클래스 내부에서 데이터를 저장했기 때문일까요?
 
 //test result page
 class TestResult extends StatefulWidget {
@@ -57,10 +17,8 @@ class TestResult extends StatefulWidget {
 }
 
 class _TestResultState extends State<TestResult> {
-  final GlobalKey _containerKey = GlobalKey();
+
   int displayNum = 0;
-  var displayDt = db.result1;
-  var resultList = [db.result1, db.result2, db.result3, db.result4, db.result5];
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +65,7 @@ class _TestResultState extends State<TestResult> {
                         Container(
                             color: Colors.yellowAccent, width: 100, height: 10),
                         Text(
-                          '${displayDt?.menu}',
+                          '${db.dataList[displayNum].menu}',
                           style: kLargeTextStyle,
                           textAlign: TextAlign.center,
                         ),
@@ -116,7 +74,7 @@ class _TestResultState extends State<TestResult> {
                         height: 15.0,
                       ),
                       Image.asset(
-                        '${displayDt?.filename}',
+                        '${db.dataList[displayNum].filename}',
                         width: 150.0,
                       ),
                       const SizedBox(
@@ -130,7 +88,7 @@ class _TestResultState extends State<TestResult> {
                             const TextSpan(
                                 text: '빵 : ', style: kMediumTextStyle),
                             TextSpan(
-                                text: '${displayDt?.bread}',
+                                text: '${db.dataList[displayNum].bread}',
                                 style: kMediumBTextStyle)
                           ])),
                           RichText(
@@ -138,7 +96,7 @@ class _TestResultState extends State<TestResult> {
                             const TextSpan(
                                 text: '메인 재료 : ', style: kMediumTextStyle),
                             TextSpan(
-                                text: '${displayDt?.main}',
+                                text: '${db.dataList[displayNum].main}',
                                 style: kMediumBTextStyle)
                           ])),
                           RichText(
@@ -146,7 +104,7 @@ class _TestResultState extends State<TestResult> {
                             const TextSpan(
                                 text: '치즈 : ', style: kMediumTextStyle),
                             TextSpan(
-                                text: '${displayDt?.cheese}',
+                                text: '${db.dataList[displayNum].cheese}',
                                 style: kMediumBTextStyle)
                           ])),
                           RichText(
@@ -154,7 +112,7 @@ class _TestResultState extends State<TestResult> {
                             const TextSpan(
                                 text: '소스 : ', style: kMediumTextStyle),
                             TextSpan(
-                                text: '${displayDt?.sauce}',
+                                text: '${db.dataList[displayNum].sauce}',
                                 style: kMediumBTextStyle)
                           ])),
                           const SizedBox(height: 25),
@@ -193,7 +151,7 @@ class _TestResultState extends State<TestResult> {
                 ),
                 InkWell(
                   onTap: () {
-                    refreshData();
+                    // refreshData();
                   },
                   child: Container(
                     padding: const EdgeInsets.all(15.0),
@@ -287,15 +245,15 @@ class _TestResultState extends State<TestResult> {
     setState(() {
       if (displayNum < 4) {
         displayNum++;
-        displayDt = resultList[displayNum];
+        // displayDt = db.dataList[displayNum];
       } else {
         displayNum = 0;
-        displayDt = resultList[displayNum];
+        // displayDt = db.dataList[displayNum];
       }
     });
   }
 
-// 메뉴 이름 길이에 따라 컨테이너 길이를 다르게 하기 위한 함수, 구현 실패
+// 메뉴 이름 길이에 따라 컨테이너 길이를 다르게 하기 위한 함수, 구현 실패 dd
 // void getWidth() {
 //   setState(() {
 //     print('getWidth() get called');
