@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'constants.dart';
 import 'package:subq/AppBar.dart';
 
-
 //test result page
 class TestResult extends StatefulWidget {
   const TestResult({Key? key}) : super(key: key);
@@ -280,6 +279,9 @@ class MenuInfo extends StatefulWidget {
 class _MenuInfoState extends State<MenuInfo> {
   @override
   Widget build(BuildContext context) {
+    double total = widget.displayData.carbo! +
+        widget.displayData.fat! +
+        widget.displayData.protein!;
     return Material(
       color: materialColor,
       child: Center(
@@ -393,17 +395,17 @@ class _MenuInfoState extends State<MenuInfo> {
                     Column(
                       // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       // crossAxisAlignment: CrossAxisAlignment.center,
-                      children: const [
+                      children: [
                         Text(
-                          '50%\n',
+                          '${(widget.displayData.carbo! * 100 / total).round()}%\n',
                           style: kMediumTextStyle,
                         ),
                         Text(
-                          '30%\n',
+                          '${(widget.displayData.protein! * 100 / total).round()}%\n',
                           style: kMediumTextStyle,
                         ),
                         Text(
-                          '20%',
+                          '${(widget.displayData.fat! * 100 / total).round()}%',
                           style: kMediumTextStyle,
                         )
                       ],
