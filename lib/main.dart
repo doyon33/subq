@@ -59,7 +59,7 @@ class FirstPage extends StatelessWidget {
               height: 50.0,
             ),
             Image.asset(
-              'image/menu/eggmayo.png',
+              'assets/image/menu/eggmayo.png',
               height: 110.0,
             ),
             const SizedBox(

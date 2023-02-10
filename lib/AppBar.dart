@@ -16,7 +16,7 @@ Widget MainAppBar(BuildContext context, {iconBtn}) {
               children: [
                 iconBtn,
                 Image.asset(
-                  'image/icon/logo.png',
+                  'assets/image/icon/logo.png',
                   width: 90.0,
                 ),
                 IconButton(
@@ -66,7 +66,7 @@ Widget TestAppBar(BuildContext context) {
                       size: 30,
                     )),
                 Image.asset(
-                  'image/icon/logo.png',
+                  'assets/image/icon/logo.png',
                   width: 90.0,
                 ),
                 const SizedBox(

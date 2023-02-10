@@ -665,7 +665,7 @@ class CompletePage extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(top: 60, bottom: 40),
-                    child: Image.asset('image/icon/complete.png'),
+                    child: Image.asset('assets/image/icon/complete.png'),
                   ),
                   const Text(
                     '정식 런칭 예약 신청이 완료되었습니다.',

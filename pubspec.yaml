@@ -66,6 +66,15 @@ flutter:
 #    - /Volumes/Crucial_X8/web_pj/subq/assets/fonts/
     - assets/image/
     - assets/font/
+    - assets/image/icon/
+    - assets/image/bread/
+    - assets/image/cheese/
+    - assets/image/main/
+    - assets/image/menu/
+    - assets/image/sauce/
+    - assets/image/vegetable/
+
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

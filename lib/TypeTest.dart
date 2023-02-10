@@ -23,8 +23,8 @@ class TestStart extends StatelessWidget {
           child: Column(
             children: [
               TestAppBar(context),
-              buildContainer(
-                  '', 'image/icon/question.png', '어떤 목적을 중심으로\n추천받고 싶으신가요?\n'),
+              buildContainer('', 'assets/image/icon/question.png',
+                  '어떤 목적을 중심으로\n추천받고 싶으신가요?\n'),
               const SizedBox(
                 height: 5.0,
               ),
@@ -75,30 +75,31 @@ class _TestBread1State extends State<TestBread1> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg(
-                    '허니오트', 'image/bread/honey_oat.png', '#고소한 위트빵 #오트밀 가루'),
+                toppingImg('허니오트', 'assets/image/bread/honey_oat.png',
+                    '#고소한 위트빵 #오트밀 가루'),
                 buildButtons(btn_bread1, updateData),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg(
-                    '하티', 'image/bread/hearty.png', '#화이트빵 + 옥수수 가루 #겉바속촉'),
+                toppingImg('하티', 'assets/image/bread/hearty.png',
+                    '#화이트빵 + 옥수수 가루 #겉바속촉'),
                 buildButtons(btn_bread2, updateData),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('위트', 'image/bread/wheat.png', '#9가지 곡물 #건강 #고소'),
+                toppingImg(
+                    '위트', 'assets/image/bread/wheat.png', '#9가지 곡물 #건강 #고소'),
                 buildButtons(btn_bread3, updateData)
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('파마산 오레가노', 'image/bread/parmesan.png',
+                toppingImg('파마산 오레가노', 'assets/image/bread/parmesan.png',
                     '#파마산 오레가노 시즈닝 #허브향'),
                 buildButtons(btn_bread4, updateData)
               ],
@@ -152,15 +153,16 @@ class _TestBread2State extends State<TestBread2> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('화이트', 'image/bread/white.png', '#클래식한 빵 #부드러움'),
+                toppingImg(
+                    '화이트', 'assets/image/bread/white.png', '#클래식한 빵 #부드러움'),
                 buildButtons(btn_bread5, updateData),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg(
-                    '플랫브레드', 'image/bread/flat_bread.png', '#납작한 모양 #쫀득쫀득'),
+                toppingImg('플랫브레드', 'assets/image/bread/flat_bread.png',
+                    '#납작한 모양 #쫀득쫀득'),
                 buildButtons(btn_bread6, updateData),
               ],
             ),
@@ -210,28 +212,28 @@ class _TestMain1State extends State<TestMain1> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('에그마요', 'image/main/eggmayo.png', ''),
+                toppingImg('에그마요', 'assets/image/main/eggmayo.png', ''),
                 buildButtons(btn_main1, updateData),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('스테이크', 'image/main/steak.png', ''),
+                toppingImg('스테이크', 'assets/image/main/steak.png', ''),
                 buildButtons(btn_main2, updateData),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('참치', 'image/main/tuna.png', ''),
+                toppingImg('참치', 'assets/image/main/tuna.png', ''),
                 buildButtons(btn_main3, updateData)
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('바비큐', 'image/main/bbq.png', ''),
+                toppingImg('바비큐', 'assets/image/main/bbq.png', ''),
                 buildButtons(btn_main4, updateData)
               ],
             ),
@@ -282,28 +284,28 @@ class _TestMain2State extends State<TestMain2> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('쉬림프', 'image/main/shrimp.png', ''),
+                toppingImg('쉬림프', 'assets/image/main/shrimp.png', ''),
                 buildButtons(btn_main5, updateData),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('치킨', 'image/main/chicken.png', ''),
+                toppingImg('치킨', 'assets/image/main/chicken.png', ''),
                 buildButtons(btn_main6, updateData),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('햄', 'image/main/ham.png', ''),
+                toppingImg('햄', 'assets/image/main/ham.png', ''),
                 buildButtons(btn_main7, updateData)
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('베이컨', 'image/main/bacon.png', ''),
+                toppingImg('베이컨', 'assets/image/main/bacon.png', ''),
                 buildButtons(btn_main8, updateData)
               ],
             ),
@@ -354,28 +356,29 @@ class _TestMain3State extends State<TestMain3> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('베지', 'image/menu/veggie.png', ''),
+                toppingImg('베지', 'assets/image/menu/veggie.png', ''),
                 buildButtons(btn_main9, updateData),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('치킨브레스트햄', 'image/main/chicken_breast_ham.png', ''),
+                toppingImg(
+                    '치킨브레스트햄', 'assets/image/main/chicken_breast_ham.png', ''),
                 buildButtons(btn_main10, updateData),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('페퍼로니', 'image/main/pepperoni.png', ''),
+                toppingImg('페퍼로니', 'assets/image/main/pepperoni.png', ''),
                 buildButtons(btn_main11, updateData)
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('살라미', 'image/main/salami.png', ''),
+                toppingImg('살라미', 'assets/image/main/salami.png', ''),
                 buildButtons(btn_main12, updateData)
               ],
             ),
@@ -426,21 +429,21 @@ class _TestCheeseState extends State<TestCheese> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('아메리칸 치즈', 'image/cheese/american.png', ''),
+                toppingImg('아메리칸 치즈', 'assets/image/cheese/american.png', ''),
                 buildButtons(btn_cheese1, updateData),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('슈레드 치즈', 'image/cheese/shredded.png', ''),
+                toppingImg('슈레드 치즈', 'assets/image/cheese/shredded.png', ''),
                 buildButtons(btn_cheese2, updateData),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('모차렐라 치즈', 'image/cheese/mozzarella.png', ''),
+                toppingImg('모차렐라 치즈', 'assets/image/cheese/mozzarella.png', ''),
                 buildButtons(btn_cheese3, updateData)
               ],
             ),
@@ -490,28 +493,28 @@ class _TestVege1State extends State<TestVege1> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('양상추', 'image/vegetable/lettuce.png', ''),
+                toppingImg('양상추', 'assets/image/vegetable/lettuce.png', ''),
                 buildButtons(btn_vege1, updateData),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('토마토', 'image/vegetable/tomato.png', ''),
+                toppingImg('토마토', 'assets/image/vegetable/tomato.png', ''),
                 buildButtons(btn_vege2, updateData),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('오이', 'image/vegetable/cucumber.png', ''),
+                toppingImg('오이', 'assets/image/vegetable/cucumber.png', ''),
                 buildButtons(btn_vege3, updateData)
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('피망', 'image/vegetable/pepper.png', ''),
+                toppingImg('피망', 'assets/image/vegetable/pepper.png', ''),
                 buildButtons(btn_vege4, updateData)
               ],
             ),
@@ -562,28 +565,28 @@ class _TestVege2State extends State<TestVege2> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('양파', 'image/vegetable/onion.png', ''),
+                toppingImg('양파', 'assets/image/vegetable/onion.png', ''),
                 buildButtons(btn_vege5, updateData),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('피클', 'image/vegetable/pickle.png', ''),
+                toppingImg('피클', 'assets/image/vegetable/pickle.png', ''),
                 buildButtons(btn_vege6, updateData),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('올리브', 'image/vegetable/olive.png', ''),
+                toppingImg('올리브', 'assets/image/vegetable/olive.png', ''),
                 buildButtons(btn_vege7, updateData)
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('할라피뇨', 'image/vegetable/jalapeno.png', ''),
+                toppingImg('할라피뇨', 'assets/image/vegetable/jalapeno.png', ''),
                 buildButtons(btn_vege8, updateData)
               ],
             ),
@@ -634,7 +637,7 @@ class _TestVege3State extends State<TestVege3> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('아보카도', 'image/vegetable/avocado.png', ''),
+                toppingImg('아보카도', 'assets/image/vegetable/avocado.png', ''),
                 buildButtons(btn_vege9, updateData),
               ],
             ),
@@ -681,21 +684,22 @@ class _TestSauce1State extends State<TestSauce1> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('랜치', 'image/sauce/ranch.png', '#고소한 마요네즈 #레몬즙'),
+                toppingImg(
+                    '랜치', 'assets/image/sauce/ranch.png', '#고소한 마요네즈 #레몬즙'),
                 buildButtons(btn_sauce1, updateData),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('마요네즈', 'image/sauce/mayo.png', '#고소'),
+                toppingImg('마요네즈', 'assets/image/sauce/mayo.png', '#고소'),
                 buildButtons(btn_sauce2, updateData),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('스위트 어니언', 'image/sauce/sweet_onion.png',
+                toppingImg('스위트 어니언', 'assets/image/sauce/sweet_onion.png',
                     '#써브웨이 특제 소스 #달콤'),
                 buildButtons(btn_sauce3, updateData)
               ],
@@ -703,8 +707,8 @@ class _TestSauce1State extends State<TestSauce1> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg(
-                    '허니 머스타드', 'image/sauce/honey_mustard.png', '#달콤 #겨자'),
+                toppingImg('허니 머스타드', 'assets/image/sauce/honey_mustard.png',
+                    '#달콤 #겨자'),
                 buildButtons(btn_sauce4, updateData)
               ],
             ),
@@ -755,15 +759,16 @@ class _TestSauce2State extends State<TestSauce2> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg(
-                    '스위트 칠리', 'image/sauce/sweet_chilli.png', '#칠리 #매콤 #달콤'),
+                toppingImg('스위트 칠리', 'assets/image/sauce/sweet_chilli.png',
+                    '#칠리 #매콤 #달콤'),
                 buildButtons(btn_sauce5, updateData),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('핫 칠리', 'image/sauce/hot_chilli.png', '#진짜_매운맛'),
+                toppingImg(
+                    '핫 칠리', 'assets/image/sauce/hot_chilli.png', '#진짜_매운맛'),
                 buildButtons(btn_sauce6, updateData),
               ],
             ),
@@ -772,7 +777,7 @@ class _TestSauce2State extends State<TestSauce2> {
               children: [
                 toppingImg(
                     'NEW 사우스 웨스트 치폴레',
-                    'image/sauce/new_southwest_chipotle.png',
+                    'assets/image/sauce/new_southwest_chipotle.png',
                     '#핫칠리+마요네즈 #이국적인_맛'),
                 buildButtons(btn_sauce7, updateData)
               ],
@@ -780,7 +785,8 @@ class _TestSauce2State extends State<TestSauce2> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('머스타드', 'image/sauce/mustard.png', '#오리지날_옐로우_머스타드'),
+                toppingImg(
+                    '머스타드', 'assets/image/sauce/mustard.png', '#오리지날_옐로우_머스타드'),
                 buildButtons(btn_sauce8, updateData)
               ],
             ),
@@ -831,29 +837,31 @@ class _TestSauce3State extends State<TestSauce3> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg(
-                    '홀스래디쉬', 'image/sauce/horseradish.png', '#고소한_마요네즈 #고추냉이'),
+                toppingImg('홀스래디쉬', 'assets/image/sauce/horseradish.png',
+                    '#고소한_마요네즈 #고추냉이'),
                 buildButtons(btn_sauce9, updateData),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('올리브 오일', 'image/sauce/olive_oil.png', '#담백 #깔끔'),
+                toppingImg(
+                    '올리브 오일', 'assets/image/sauce/olive_oil.png', '#담백 #깔끔'),
                 buildButtons(btn_sauce10, updateData),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('레드와인식초', 'image/sauce/red_wine.png', '#풍미 가득'),
+                toppingImg(
+                    '레드와인식초', 'assets/image/sauce/red_wine.png', '#풍미 가득'),
                 buildButtons(btn_sauce11, updateData)
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('소금', 'image/sauce/salt.png', '소금'),
+                toppingImg('소금', 'assets/image/sauce/salt.png', '소금'),
                 buildButtons(btn_sauce12, updateData)
               ],
             ),
@@ -903,15 +911,15 @@ class _TestSauce4State extends State<TestSauce4> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg('후추', 'image/sauce/black_pepper.png', '#후추'),
+                toppingImg('후추', 'assets/image/sauce/black_pepper.png', '#후추'),
                 buildButtons(btn_sauce13, updateData),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                toppingImg(
-                    '스모크 바비큐', 'image/sauce/smoke_bbq.png', '#스모크_향 #달콤한_바비큐'),
+                toppingImg('스모크 바비큐', 'assets/image/sauce/smoke_bbq.png',
+                    '#스모크_향 #달콤한_바비큐'),
                 buildButtons(btn_sauce14, updateData),
               ],
             ),
@@ -1025,7 +1033,7 @@ class _TestResultLoadingState extends State<TestResultLoading> {
                 height: 250.0,
                 width: 315.0,
                 decoration: kContainerStyle,
-                child: Image.asset('image/icon/loading.gif'),
+                child: Image.asset('assets/image/icon/loading.gif'),
               )
             ],
           ),

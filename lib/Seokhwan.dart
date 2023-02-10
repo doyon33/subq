@@ -4,15 +4,15 @@ import 'package:subq/TestResult.dart';
 
 // 메뉴에 해당하는 이미지 파일을 불러오기 위한 Map
 Map<String, String> imgFileMap = {
-  '에그마요': 'image/menu/eggmayo.png',
-  '베이컨': 'image/menu/bacon.png',
-  '바베큐': 'image/menu/bbq.png',
-  '치킨': 'image/menu/chicken.png',
-  '햄': 'image/menu/ham.png',
-  '쉬림프': 'image/menu/shrimp.png',
-  '스테이크': 'image/menu/steak.png',
-  '참치': 'image/menu/tuna.png',
-  '베지': 'image/menu/vege.png'
+  '에그마요': 'assets/image/menu/eggmayo.png',
+  '베이컨': 'assets/image/menu/bacon.png',
+  '바베큐': 'assets/image/menu/bbq.png',
+  '치킨': 'assets/image/menu/chicken.png',
+  '햄': 'assets/image/menu/ham.png',
+  '쉬림프': 'assets/image/menu/shrimp.png',
+  '스테이크': 'assets/image/menu/steak.png',
+  '참치': 'assets/image/menu/tuna.png',
+  '베지': 'assets/image/menu/vege.png'
 };
 
 //테스트 결과로 나온 추천 메뉴 각각의 정보 클래스
@@ -95,19 +95,19 @@ class Utils {
   }
 
   static void printMenu(dynamic jboj) {
-    print("");
-    print("");
-    print("");
-    print("이름: ${jboj['name']}");
-    print("빵: ${jboj['bread']}");
-    print("메인재료: ${jboj['main']}");
-    print("치즈: ${jboj['cheese']}");
-    print("소스: ${jboj['sauce']}");
-    print("kcal: ${jboj['nutrition']['calorie']}");
-    print("탄수화물: ${jboj['nutrition']['carbohydrate']}");
-    print("단백질: ${jboj['nutrition']['protein']}");
-    print("포화지방: ${jboj['nutrition']['fat']}");
-    print("식이섬유: ${jboj['nutrition']['dietary_fiber']}");
+    // print("");
+    // print("");
+    // print("");
+    // print("이름: ${jboj['name']}");
+    // print("빵: ${jboj['bread']}");
+    // print("메인재료: ${jboj['main']}");
+    // print("치즈: ${jboj['cheese']}");
+    // print("소스: ${jboj['sauce']}");
+    // print("kcal: ${jboj['nutrition']['calorie']}");
+    // print("탄수화물: ${jboj['nutrition']['carbohydrate']}");
+    // print("단백질: ${jboj['nutrition']['protein']}");
+    // print("포화지방: ${jboj['nutrition']['fat']}");
+    // print("식이섬유: ${jboj['nutrition']['dietary_fiber']}");
 
     //TestResultData 클래스의 인스턴스를 생성
     var s = TestResultData(
@@ -117,7 +117,7 @@ class Utils {
         jboj['cheese'],
         jboj['sauce'],
         // imgFileMap[jboj['main']]!,
-        'image/menu/eggmayo.png',
+        'assets/image/menu/eggmayo.png',
         jboj['nutrition']['calorie'],
         jboj['nutrition']['carbohydrate'],
         jboj['nutrition']['protein'],

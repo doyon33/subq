@@ -199,7 +199,7 @@ class _TestResultState extends State<TestResult> {
                                         duration: const Duration(seconds: 2)));
                               },
                               child: Image.asset(
-                                'image/icon/share.png',
+                                'assets/image/icon/share.png',
                                 width: 50,
                                 height: 50,
                               ),
