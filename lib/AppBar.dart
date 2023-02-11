@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:subq/SubPages.dart';
+import 'package:subq/constants.dart';
 
 Widget MainAppBar(BuildContext context, {iconBtn}) {
   return Material(
     child: Container(
       color: Colors.white,
+      height: screenHeight(context) * 0.1,
       child: Column(
         children: [
           Container(
-            margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
+            margin: const EdgeInsets.only(left: 20, right: 20),
             padding: const EdgeInsets.all(5),
+            height: screenHeight(context) * 0.07,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -17,7 +20,7 @@ Widget MainAppBar(BuildContext context, {iconBtn}) {
                 iconBtn,
                 Image.asset(
                   'assets/image/icon/logo.png',
-                  width: 90.0,
+                  // width: 90.0,
                 ),
                 IconButton(
                     onPressed: () {
@@ -50,7 +53,7 @@ Widget TestAppBar(BuildContext context) {
       child: Column(
         children: [
           Container(
-            margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
+            margin: const EdgeInsets.only(left: 20, right: 20),
             padding: const EdgeInsets.all(5),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -70,7 +73,7 @@ Widget TestAppBar(BuildContext context) {
                   width: 90.0,
                 ),
                 const SizedBox(
-                  height: 10,
+                  width: 35,
                 )
               ],
             ),
