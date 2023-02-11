@@ -73,6 +73,7 @@ flutter:
     - assets/image/menu/
     - assets/image/sauce/
     - assets/image/vegetable/
+    - assets/terms.txt
 
 
   #   - images/a_dot_ham.jpeg
