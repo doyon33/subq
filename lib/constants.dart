@@ -4,13 +4,19 @@ import 'package:subq/Seokhwan.dart';
 import 'Button.dart';
 import 'main.dart';
 
-//스크린 크기에 따른 상수 전달 함수
+//스크린 크기에 따른 상수 전달 함수 : 전체 스크린의 width 사이즈를 조절
 screenCheck(BuildContext context) {
-  if (MediaQuery.of(context).size.width >= 700) {
+  var w = MediaQuery.of(context).size.width;
+  if (w >= 700) {
     return 500;
   } else {
-    return null;
+    return w;
   }
+}
+
+screenHeight(BuildContext context) {
+  var h = MediaQuery.of(context).size.height;
+  return h;
 }
 
 //자주 사용하는 텍스트, 위젯 스타일을 한 번에 관리
@@ -21,19 +27,19 @@ const materialColor = Color(0xfffbfbfb);
 const kLargeTextStyle = TextStyle(
     color: Colors.black,
     fontWeight: FontWeight.w700,
-    fontSize: 18.0,
+    fontSize: 16.0,
     fontFamily: 'hyemin');
 
 const kMediumTextStyle = TextStyle(
     color: Colors.black,
     fontWeight: FontWeight.w400,
-    fontSize: 16.0,
+    fontSize: 15.0,
     fontFamily: 'hyemin');
 
 const kMediumBTextStyle = TextStyle(
     color: Colors.black,
     fontWeight: FontWeight.w700,
-    fontSize: 16.0,
+    fontSize: 15.0,
     fontFamily: 'hyemin');
 
 const kSmallTextStyle = TextStyle(
@@ -73,12 +79,11 @@ var kCheckBoxStyle =
 
 //컨테이너 생성 함수
 //container with green background
-Widget buildContainer(String text1, String img, String text2) {
+Widget buildContainer(String img, String text) {
   return Container(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(10.0),
       margin: const EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
       alignment: Alignment.center,
-      // height: 150.0,
       decoration: kContainerStyle,
       child: Column(children: [
         Image.asset(
@@ -86,11 +91,8 @@ Widget buildContainer(String text1, String img, String text2) {
           height: 60,
           fit: BoxFit.fill,
         ),
-        const SizedBox(
-          height: 20,
-        ),
         Text(
-          text2,
+          text,
           style: kLargeTextStyle,
         )
       ]));
@@ -145,74 +147,79 @@ Widget buildImgButton(String imgFile) {
 
 //Type Test에서 공통되는 상단 컨테이너 생성 함수
 // linear progress bar, texts with padding
-Widget buildTop(int pageNum, double progressValue, String category) {
-  return Column(
-    children: [
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const SizedBox(
-            height: 10.0,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5.0, right: 30.0),
-            child: Text(
-              '$pageNum/13',
-              style: kSmallTextStyle,
+Widget buildTop(
+    BuildContext context, int pageNum, double progressValue, String category) {
+  return Container(
+    height: screenCheck(context) * 0.15,
+    child: Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const SizedBox(
+              height: 10.0,
             ),
-          )
-        ],
-      ),
-      Padding(
-        padding: const EdgeInsets.only(bottom: 10.0, left: 30.0, right: 30.0),
-        child: Container(
-          decoration: BoxDecoration(
-              border: Border.all(width: 2, color: const Color(0xfff1c323)),
-              borderRadius: const BorderRadius.all(Radius.circular(10))),
-          child: ClipRRect(
-            borderRadius: const BorderRadius.all(Radius.circular(10)),
-            child: LinearProgressIndicator(
-              valueColor: const AlwaysStoppedAnimation(Color(0xfff1c323)),
-              backgroundColor: const Color(0xffffffff),
-              value: progressValue,
-              minHeight: 10.0,
+            Padding(
+              padding: const EdgeInsets.only(top: 5.0, right: 30.0),
+              child: Text(
+                '$pageNum/13',
+                style: kSmallTextStyle,
+              ),
+            )
+          ],
+        ),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 10.0, left: 30.0, right: 30.0),
+          child: Container(
+            decoration: BoxDecoration(
+                border: Border.all(width: 2, color: const Color(0xfff1c323)),
+                borderRadius: const BorderRadius.all(Radius.circular(10))),
+            child: ClipRRect(
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
+              child: LinearProgressIndicator(
+                valueColor: const AlwaysStoppedAnimation(Color(0xfff1c323)),
+                backgroundColor: const Color(0xffffffff),
+                value: progressValue,
+                minHeight: 10.0,
+              ),
             ),
           ),
         ),
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 40.0, right: 20.0),
-            child: Text(
-              category,
-              style: kLargeTextStyle,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 40.0, right: 20.0),
+              child: Text(
+                category,
+                style: kLargeTextStyle,
+              ),
             ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 10.0),
-            child: Text(
-              '잘 모르는 재료는 평가하지 않아도 됩니다.',
-              style: kMediumTextStyle,
-            ),
-          )
-        ],
-      ),
-      const SizedBox(
-        height: 5.0,
-      ),
-    ],
+            const Padding(
+              padding: EdgeInsets.only(left: 10.0),
+              child: Text(
+                '잘 모르는 재료는 평가하지 않아도 됩니다.',
+                style: kMediumTextStyle,
+              ),
+            )
+          ],
+        ),
+        const SizedBox(
+          height: 5.0,
+        ),
+      ],
+    ),
   );
 }
 
 //평가 버튼 생성 함수
-Widget buildButtons(Buttons btn, func) {
+Widget buildButtons(Buttons btn, func, BuildContext context) {
   double btnSize = 30;
   double btnSize2 = 40;
 
-  return SizedBox(
-    width: 200.0,
+  return Container(
+    // color: Colors.yellow,
+    width: screenCheck(context) * 0.4,
     child: (Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -240,9 +247,6 @@ Widget buildButtons(Buttons btn, func) {
             ),
           ],
         ),
-        const SizedBox(
-          width: 30.0,
-        ),
         Column(
           children: [
             const SizedBox(
@@ -267,9 +271,6 @@ Widget buildButtons(Buttons btn, func) {
             )
           ],
         ),
-        const SizedBox(
-          width: 30.0,
-        ),
         Column(
           children: [
             InkWell(
@@ -285,11 +286,11 @@ Widget buildButtons(Buttons btn, func) {
             const Text(
               '최고예요!',
               style: kButtonTextStyle,
-            )
+            ),
           ],
         ),
         const SizedBox(
-          width: 10,
+          width: 1,
         )
       ],
     )),
@@ -297,35 +298,42 @@ Widget buildButtons(Buttons btn, func) {
 }
 
 //Type test : topping 사진 생성 함수
-Widget toppingImg(String menuName, String imgFile, String menuInfo) {
+Widget toppingImg(BuildContext context, String menuName, String imgFile,
+    {String toppingInfo = ''}) {
   return Container(
-    width: 230.0,
-    padding:
-        const EdgeInsets.only(left: 10.0, top: 10.0, bottom: 10.0, right: 25.0),
-    child: (Column(
-      children: [
-        Text(
-          menuName,
-          style: kMediumBTextStyle,
+      width: screenCheck(context) * 0.4,
+      height: screenHeight(context) * 0.15,
+      color: Colors.red,
+      padding: const EdgeInsets.only(
+        top: 5,
+        bottom: 5,
+      ),
+      child: FittedBox(
+        fit: BoxFit.fitHeight,
+        child: Column(
+          children: [
+            Text(
+              menuName,
+              style: kMediumBTextStyle,
+            ),
+            const SizedBox(
+              height: 5.0,
+            ),
+            Image.asset(
+              imgFile,
+              // width: 145,
+              height: screenHeight(context) * 0.08,
+            ),
+            const SizedBox(
+              height: 5.0,
+            ),
+            Text(
+              toppingInfo,
+              style: kTagTextStyle,
+            )
+          ],
         ),
-        const SizedBox(
-          height: 5.0,
-        ),
-        Image.asset(
-          imgFile,
-          width: 145,
-          height: 61,
-        ),
-        const SizedBox(
-          height: 5.0,
-        ),
-        Text(
-          menuInfo,
-          style: kTagTextStyle,
-        )
-      ],
-    )),
-  );
+      ));
 }
 
 //약관
@@ -337,7 +345,7 @@ const String terms =
 
 // 실행 함수들
 // purpose 값 저장
-purposeCode(int num) {
+void purposeCode(int num) {
   Utils.purpose = num;
   purpose = "purpose:::$num";
 }
