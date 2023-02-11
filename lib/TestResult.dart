@@ -60,9 +60,9 @@ class _TestResultState extends State<TestResult> {
                     children: [
                       Stack(alignment: Alignment.bottomCenter, children: [
                         Container(
-                            color: Colors.yellowAccent, width: 100, height: 10),
+                            color: Colors.yellowAccent, width: 200, height: 10),
                         Text(
-                          '${displayData.menu}',
+                          '${displayData.menu} + ${displayData.sauce}',
                           style: kLargeTextStyle,
                           textAlign: TextAlign.center,
                         ),
@@ -112,36 +112,25 @@ class _TestResultState extends State<TestResult> {
                                 text: '${displayData.sauce}',
                                 style: kMediumBTextStyle)
                           ])),
-                          const SizedBox(height: 25),
-                          Stack(
-                            alignment: Alignment.bottomCenter,
-                            children: [
-                              Container(
-                                width: 150,
-                                height: 10,
-                                color: Colors.yellowAccent,
-                              ),
-                              const Text(
-                                '영양성분 보러가기',
-                                style: kMediumBTextStyle,
-                              ),
-                              InkWell(
-                                onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              MenuInfo(displayData)));
-                                },
-                                child: Container(
-                                  color: Colors.transparent,
-                                  width: 200,
-                                  height: 20,
-                                ),
-                              ),
-                            ],
-                          )
+                          const SizedBox(height: 20),
                         ],
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MenuInfo(displayData)));
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.all(9.0),
+                          decoration:
+                              kButtonStyleB.copyWith(color: const Color(0xffb5d0c3)),
+                          child: const Text(
+                            '영양성분 보러가기',
+                            style: kMediumBTextStyle,
+                          ),
+                        ),
                       )
                     ],
                   ),
@@ -335,23 +324,23 @@ class _MenuInfoState extends State<MenuInfo> {
                     Column(
                       children: [
                         Text(
-                          '${widget.displayData.kcal}\n',
+                          '${widget.displayData.kcal!.round()}\n',
                           style: kMediumTextStyle,
                         ),
                         Text(
-                          '${widget.displayData.carbo}\n',
+                          '${widget.displayData.carbo!.round()}\n',
                           style: kMediumTextStyle,
                         ),
                         Text(
-                          '${widget.displayData.fat}\n',
+                          '${widget.displayData.fat!.round()}\n',
                           style: kMediumTextStyle,
                         ),
                         Text(
-                          '${widget.displayData.dietaryFiber}\n',
+                          '${widget.displayData.dietaryFiber!.round()}\n',
                           style: kMediumTextStyle,
                         ),
                         Text(
-                          '${widget.displayData.protein}',
+                          '${widget.displayData.protein!.round()}',
                           style: kMediumTextStyle,
                         ),
                       ],
@@ -417,13 +406,21 @@ class _MenuInfoState extends State<MenuInfo> {
                 height: 20.0,
               ),
               Container(
-                width: 400.0,
-                // alignment: Alignment.center,
-                child: (const Text(
-                  '영양성분 및 관련 정보는 서브웨이 홈페이지 등 공개된 정보를 기반으로 추정한 정보로 실제 구매하시는 메뉴의 영양정보와 상이할 수 있습니다. 본 정보는 주문시 메뉴선택에 도움을 드리고 자 제공되는 정보로 참고 목적으로만 활용 부탁드립니다.',
-                  style: kButtonTextStyle,
-                )),
-              )
+                alignment: Alignment.center,
+                width: screenCheck(context) * 0.7,
+                child: RichText(
+                  text: const TextSpan(
+                    children: [
+                      WidgetSpan(child: SizedBox(width: 10,)),
+                      (TextSpan(
+                        text:
+                            ' 영양성분 및 관련 정보는 서브웨이 홈페이지 등 공개된 정보를 기반으로 추정한 정보로 실제 구매하시는 메뉴의 영양정보와 상이할 수 있습니다. 본 정보는 주문시 메뉴선택에 도움을 드리고자 제공되는 정보로 참고 목적으로만 활용 부탁드립니다.',
+                        style: kButtonTextStyle,
+                      )),
+                    ],
+                  ),
+                ),
+              ),
             ],
           )),
         ),
