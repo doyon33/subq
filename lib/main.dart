@@ -44,15 +44,34 @@ class FirstPage extends StatelessWidget {
                   )),
             ),
             Container(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(30.0),
               margin: const EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
               alignment: Alignment.center,
-              height: 150.0,
               decoration: kContainerStyle,
-              child: Text(
-                "당신의 샌드위치 취향은 어떨까요?\n\n개인맞춤 서브웨이 메뉴 추천 서비스\n#꿀조합 #맛 #건강",
+              // child: const Text(
+              //   "당신의 샌드위치 취향은 어떨까요?\n\n개인맞춤 서브웨이 메뉴 추천 서비스\n#꿀조합 #맛 #건강",
+              //   textAlign: TextAlign.center,
+              //   style: kLargeTextStyle,
+              // ),
+              child: RichText(
                 textAlign: TextAlign.center,
-                style: kLargeTextStyle,
+                text: TextSpan(children: [
+                  const TextSpan(
+                      text: '당신의 샌드위치 취향은 어떨까요?\n\n', style: kLargeTextStyle),
+                  TextSpan(
+                      text: '개인맞춤 ',
+                      style: kLargeTextStyle.copyWith(
+                          color: const Color(0xffd8af1f))),
+                  TextSpan(
+                      text: '서브웨이 메뉴 ',
+                      style: kLargeTextStyle.copyWith(
+                          color: const Color(0xff228E46))),
+                  const TextSpan(text: '추천 서비스\n', style: kLargeTextStyle),
+                  TextSpan(
+                      text: '#꿀조합 #맛 #건강',
+                      style: kLargeTextStyle.copyWith(
+                          color: const Color(0xff595959)))
+                ]),
               ),
             ),
             const SizedBox(
@@ -65,8 +84,16 @@ class FirstPage extends StatelessWidget {
             const SizedBox(
               height: 50.0,
             ),
-            const Text('브레드부터 소스까지\n재료를 평가하면\n서브큐가 꿀조합을 추천해드려요.',
-                textAlign: TextAlign.center, style: kLargeTextStyle),
+            RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(
+              children: [
+                const TextSpan(text: '브레드부터 소스까지\n재료를 평가하면\n', style: kLargeTextStyle),
+                TextSpan(text: '서브', style: kLargeTextStyle.copyWith(color: const Color(0xfff1c323))),
+                TextSpan(text: '큐', style: kLargeTextStyle.copyWith(color: const Color(0xff228E46)),),
+                const TextSpan(text: '가 꿀조합을 추천해드려요.', style: kLargeTextStyle)
+              ]
+            )),
             const SizedBox(
               height: 50.0,
             ),
@@ -142,4 +169,3 @@ Buttons btn_sauce11 = Buttons('SUBWAY_SAUCE_10009'); //레드와인식초
 Buttons btn_sauce12 = Buttons('SUBWAY_SAUCE_10020'); //소금
 Buttons btn_sauce13 = Buttons('SUBWAY_SAUCE_10021'); //후추
 Buttons btn_sauce14 = Buttons('SUBWAY_SAUCE_10013'); //스모크 바비큐
-
