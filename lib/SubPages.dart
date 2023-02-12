@@ -20,15 +20,7 @@ class TermsPage extends StatelessWidget {
             children: [
               MainAppBar(
                 context,
-                iconBtn: IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Icon(
-                      Icons.arrow_back_ios,
-                      color: Colors.black,
-                      size: 30,
-                    )),
+                iconBtn: backIcon(context)
               ),
               Expanded(
                   child: SingleChildScrollView(
@@ -147,15 +139,7 @@ class _ReservationPageState extends State<ReservationPage> {
         child: (ListView(children: [
           MainAppBar(
             context,
-            iconBtn: IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: const Icon(
-                  Icons.arrow_back_ios,
-                  color: Colors.black,
-                  size: 30,
-                )),
+            iconBtn: backIcon(context)
           ),
           const SizedBox(
             height: 30,
@@ -651,15 +635,7 @@ class CompletePage extends StatelessWidget {
             children: [
               MainAppBar(
                 context,
-                iconBtn: IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Icon(
-                      Icons.arrow_back_ios,
-                      color: Colors.black,
-                      size: 30,
-                    )),
+                iconBtn: backIcon(context)
               ),
               Column(
                 children: [
