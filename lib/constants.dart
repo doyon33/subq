@@ -303,7 +303,7 @@ Widget toppingImg(BuildContext context, String menuName, String imgFile,
   return Container(
       width: screenCheck(context) * 0.4,
       height: screenHeight(context) * 0.15,
-      color: Colors.red,
+      color: Colors.white,
       padding: const EdgeInsets.only(
         top: 5,
         bottom: 5,
