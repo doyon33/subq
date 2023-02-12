@@ -145,12 +145,25 @@ Widget buildImgButton(String imgFile) {
   );
 }
 
+IconButton backIcon(BuildContext context) {
+  return IconButton(
+      padding: const EdgeInsets.only(bottom: 5),
+      constraints: const BoxConstraints(),
+      onPressed: () {
+        Navigator.maybePop(context);
+      },
+      icon: const Icon(
+        Icons.arrow_back_ios,
+        color: Colors.black,
+        size: 30,
+      ));
+}
+
 //Type Test에서 공통되는 상단 컨테이너 생성 함수
 // linear progress bar, texts with padding
 Widget buildTop(
     BuildContext context, int pageNum, double progressValue, String category) {
   return Container(
-    height: screenCheck(context) * 0.15,
     child: Column(
       children: [
         Row(
@@ -218,82 +231,82 @@ Widget buildButtons(Buttons btn, func, BuildContext context) {
   double btnSize2 = 40;
 
   return Container(
-    // color: Colors.yellow,
     width: screenCheck(context) * 0.4,
-    child: (Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Column(
-          children: [
-            const SizedBox(
-              height: 5.0,
-            ),
-            InkWell(
-              onTap: () {
-                func(1, btn);
-              },
-              child: Image.asset(
-                btn.imgFile1,
-                width: btnSize,
-                height: btnSize,
+    child: Container(
+      padding: const EdgeInsets.only(left: 5),
+      color: Colors.white,
+      child: (Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            children: [
+              const SizedBox(
+                height: 5.0,
               ),
-            ),
-            const SizedBox(
-              height: 5.0,
-            ),
-            const Text(
-              '싫어요',
-              style: kButtonTextStyle,
-            ),
-          ],
-        ),
-        Column(
-          children: [
-            const SizedBox(
-              height: 5.0,
-            ),
-            InkWell(
-              onTap: () {
-                func(2, btn);
-              },
-              child: Image.asset(
-                btn.imgFile2,
-                width: btnSize,
-                height: btnSize,
+              InkWell(
+                onTap: () {
+                  func(1, btn);
+                },
+                child: Image.asset(
+                  btn.imgFile1,
+                  width: btnSize,
+                  height: btnSize,
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 5.0,
-            ),
-            const Text(
-              '좋아요',
-              style: kButtonTextStyle,
-            )
-          ],
-        ),
-        Column(
-          children: [
-            InkWell(
-              onTap: () {
-                func(3, btn);
-              },
-              child: Image.asset(
-                btn.imgFile3,
-                width: btnSize2,
-                height: btnSize2,
+              const SizedBox(
+                height: 5.0,
               ),
-            ),
-            const Text(
-              '최고예요!',
-              style: kButtonTextStyle,
-            ),
-          ],
-        ),
-        const SizedBox(
-          width: 1,
-        )
-      ],
-    )),
+              const Text(
+                '싫어요',
+                style: kButtonTextStyle,
+              ),
+            ],
+          ),
+          Column(
+            children: [
+              const SizedBox(
+                height: 5.0,
+              ),
+              InkWell(
+                onTap: () {
+                  func(2, btn);
+                },
+                child: Image.asset(
+                  btn.imgFile2,
+                  width: btnSize,
+                  height: btnSize,
+                ),
+              ),
+              const SizedBox(
+                height: 5.0,
+              ),
+              const Text(
+                '좋아요',
+                style: kButtonTextStyle,
+              )
+            ],
+          ),
+          Column(
+            children: [
+              InkWell(
+                onTap: () {
+                  func(3, btn);
+                },
+                child: Image.asset(
+                  btn.imgFile3,
+                  width: btnSize2,
+                  height: btnSize2,
+                ),
+              ),
+              const Text(
+                '최고예요!',
+                style: kButtonTextStyle,
+              ),
+            ],
+          ),
+        ],
+      )),
+    ),
   );
 }
 
