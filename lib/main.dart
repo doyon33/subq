@@ -33,15 +33,7 @@ class FirstPage extends StatelessWidget {
           child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
             MainAppBar(
               context,
-              iconBtn: IconButton(
-                  onPressed: () {
-                    Navigator.maybePop(context);
-                  },
-                  icon: const Icon(
-                    Icons.arrow_back_ios,
-                    color: Colors.black,
-                    size: 30,
-                  )),
+              iconBtn: backIcon(context)
             ),
             Container(
               padding: const EdgeInsets.all(30.0),
