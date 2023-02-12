@@ -6,7 +6,6 @@ Widget MainAppBar(BuildContext context, {iconBtn}) {
   return Material(
     child: Container(
       color: Colors.white,
-      height: screenHeight(context) * 0.1,
       child: Column(
         children: [
           Container(
@@ -20,9 +19,12 @@ Widget MainAppBar(BuildContext context, {iconBtn}) {
                 iconBtn,
                 Image.asset(
                   'assets/image/icon/logo.png',
+                  fit: BoxFit.fitHeight,
                   // width: 90.0,
                 ),
                 IconButton(
+                  padding: const EdgeInsets.only(bottom: 5),
+                    constraints: const BoxConstraints(),
                     onPressed: () {
                       Navigator.push(
                           context,
@@ -55,22 +57,15 @@ Widget TestAppBar(BuildContext context) {
           Container(
             margin: const EdgeInsets.only(left: 20, right: 20),
             padding: const EdgeInsets.all(5),
+            height: screenHeight(context) * 0.07,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Icon(
-                      Icons.arrow_back_ios,
-                      color: Colors.black,
-                      size: 30,
-                    )),
+                backIcon(context),
                 Image.asset(
                   'assets/image/icon/logo.png',
-                  width: 90.0,
+                  fit: BoxFit.fitHeight,
                 ),
                 const SizedBox(
                   width: 35,
