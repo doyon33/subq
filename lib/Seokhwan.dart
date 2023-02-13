@@ -87,6 +87,7 @@ class Utils {
 
   static Future<dynamic> call() async {
     var res = await http.post(
+      //Uri.parse('http://192.168.0.9:54321/api/public/meal-plan/list-get'),
       Uri.parse('https://dev.tastybit.kr/api/public/meal-plan/list-get'),
       headers: {"Content-Type": "application/json"},
       body: getJsonString(),
@@ -95,9 +96,10 @@ class Utils {
   }
 
   static void printMenu(dynamic jboj) {
-    // print("");
-    // print("");
-    // print("");
+    //print(jboj);
+    print("");
+    print(jboj['info']);
+    print(jboj['nutrition']);
     // print("이름: ${jboj['name']}");
     // print("빵: ${jboj['bread']}");
     // print("메인재료: ${jboj['main']}");
@@ -127,8 +129,8 @@ class Utils {
     //DataBase의 인스턴스인 db(line:56)의 멤버함수를 통해 저장
     db.addData(s);
 
-    print('data added ::: ');
-    print('length of list : ${db.dataList.length}');
+    //print('data added ::: ');
+    //print('length of list : ${db.dataList.length}');
   }
 
   static Future fetchResult() async {
