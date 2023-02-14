@@ -77,7 +77,7 @@ class _TestBread1State extends State<TestBread1> {
               child: Column(
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       toppingImg(
                           context, '허니오트', 'assets/image/bread/honey_oat.png',
