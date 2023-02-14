@@ -198,24 +198,24 @@ Widget buildTop(
             ),
           ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 40.0, right: 20.0),
-              child: Text(
-                category,
-                style: kLargeTextStyle,
+        Padding(
+          padding: const EdgeInsets.only(bottom: 10.0, left: 35.0, right: 30.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 10) ,
+                child: Text(
+                    category,
+                    style: kLargeTextStyle,
+                  ),
               ),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(left: 10.0),
-              child: Text(
-                '잘 모르는 재료는 평가하지 않아도 됩니다.',
-                style: kMediumTextStyle,
-              ),
-            )
-          ],
+              const Text(
+                  '잘 모르는 재료는 평가하지 않아도 됩니다.',
+                  style: kMediumTextStyle,
+                ),
+            ],
+          ),
         ),
         const SizedBox(
           height: 5.0,
