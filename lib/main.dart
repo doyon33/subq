@@ -113,12 +113,12 @@ class FirstPage extends StatelessWidget {
 //저장된 데이터(purpose)
 var purpose;
 //(bread code)
-Buttons btn_bread1 = Buttons('SUBWAY_BREAD_10001');
-Buttons btn_bread2 = Buttons('SUBWAY_BREAD_10002');
-Buttons btn_bread3 = Buttons('SUBWAY_BREAD_10003');
-Buttons btn_bread4 = Buttons('SUBWAY_BREAD_10004');
-Buttons btn_bread5 = Buttons('SUBWAY_BREAD_10005');
-Buttons btn_bread6 = Buttons('SUBWAY_BREAD_10006');
+Buttons btn_bread1 = Buttons('SUBWAY_BREAD_10001'); //화이트
+Buttons btn_bread2 = Buttons('SUBWAY_BREAD_10002'); //파마산 오레가노
+Buttons btn_bread3 = Buttons('SUBWAY_BREAD_10003'); //위트
+Buttons btn_bread4 = Buttons('SUBWAY_BREAD_10004'); //허니오트
+Buttons btn_bread5 = Buttons('SUBWAY_BREAD_10005'); //하티
+Buttons btn_bread6 = Buttons('SUBWAY_BREAD_10006'); //플랫브레드
 //(main topping code)
 Buttons btn_main1 = Buttons('SUBWAY_MAINMENU_10017'); //에그마요
 Buttons btn_main2 = Buttons('SUBWAY_MAINMENU_10011'); //스테이크
