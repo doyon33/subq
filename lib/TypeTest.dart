@@ -73,16 +73,16 @@ class _TestBread1State extends State<TestBread1> {
             buildTop(context, 1, 0.076, '빵'),
             Container(
               // color: Colors.grey,
-              margin: EdgeInsets.only(left: 30, right: 30),
+              margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       toppingImg(
                           context, '허니오트', 'assets/image/bread/honey_oat.png',
                           toppingInfo: '#고소한_위트빵 #오트밀_가루'),
-                      buildButtons(btn_bread1, updateData, context),
+                      buildButtons(btn_bread4, updateData, context),
                     ],
                   ),
                   Row(
@@ -90,7 +90,7 @@ class _TestBread1State extends State<TestBread1> {
                     children: [
                       toppingImg(context, '하티', 'assets/image/bread/hearty.png',
                           toppingInfo: '#화이트빵+옥수수_가루 #겉바속촉'),
-                      buildButtons(btn_bread2, updateData, context),
+                      buildButtons(btn_bread5, updateData, context),
                     ],
                   ),
                   Row(
@@ -107,7 +107,7 @@ class _TestBread1State extends State<TestBread1> {
                       toppingImg(context, '파마산 오레가노',
                           'assets/image/bread/parmesan.png',
                           toppingInfo: '#파마산_오레가노_시즈닝 #허브향'),
-                      buildButtons(btn_bread4, updateData, context)
+                      buildButtons(btn_bread2, updateData, context)
                     ],
                   ),
                   buildButton(context, const TestBread2(), '다음으로',
@@ -164,7 +164,7 @@ class _TestBread2State extends State<TestBread2> {
               children: [
                 toppingImg(context, '화이트', 'assets/image/bread/white.png',
                     toppingInfo: '#클래식한_빵 #부드러움'),
-                buildButtons(btn_bread5, updateData, context),
+                buildButtons(btn_bread1, updateData, context),
               ],
             ),
             Row(
