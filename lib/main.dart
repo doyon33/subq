@@ -119,19 +119,21 @@ Buttons btn_bread3 = Buttons('SUBWAY_BREAD_10003'); //위트
 Buttons btn_bread4 = Buttons('SUBWAY_BREAD_10004'); //허니오트
 Buttons btn_bread5 = Buttons('SUBWAY_BREAD_10005'); //하티
 Buttons btn_bread6 = Buttons('SUBWAY_BREAD_10006'); //플랫브레드
-//(main topping code)
+//(main topping code) 2/17~18 이후에 수정된 코드가 적용되지 않음
 Buttons btn_main1 = Buttons('SUBWAY_MAINMENU_10017'); //에그마요
 Buttons btn_main2 = Buttons('SUBWAY_MAINMENU_10011'); //스테이크
 Buttons btn_main3 = Buttons('SUBWAY_MAINMENU_10016'); //참치
 Buttons btn_main4 = Buttons('SUBWAY_MAINMENU_10008'); //바비큐
 Buttons btn_main5 = Buttons('SUBWAY_MAINMENU_10014'); //쉬림프
-Buttons btn_main6 = Buttons('SUBWAY_MAINMENU_10012'); //치킨
+Buttons btn_main6 = Buttons('SUBWAY_MAINMENU_10006'); //치킨
 Buttons btn_main7 = Buttons('SUBWAY_MAINMENU_10009'); //햄
 Buttons btn_main8 = Buttons('SUBWAY_MAINMENU_10019'); //베이컨
 Buttons btn_main9 = Buttons('SUBWAY_MAINMENU_10018'); //베지
 Buttons btn_main10 = Buttons('SUBWAY_MAINMENU_10010'); //치킨브레스트햄
 Buttons btn_main11 = Buttons('SUBWAY_TOPPING_OTHER_10001'); //페퍼로니
 Buttons btn_main12 = Buttons('SUBWAY_TOPPING_OTHER_10002'); //살라미
+Buttons btn_main13 = Buttons('SUBWAY_MAINMENU_10008'); //치킨 데리야끼
+Buttons btn_main14 = Buttons('SUBWAY_MAINMENU_10005'); //로티세리 치킨
 //cheese
 Buttons btn_cheese1 = Buttons('SUBWAY_TOPPING_CHEESE_10001'); //아메리칸
 Buttons btn_cheese2 = Buttons('SUBWAY_TOPPING_CHEESE_10002'); //슈레드
