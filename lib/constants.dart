@@ -175,7 +175,7 @@ Widget buildTop(
             Padding(
               padding: const EdgeInsets.only(top: 5.0, right: 30.0),
               child: Text(
-                '$pageNum/13',
+                '$pageNum/14',
                 style: kSmallTextStyle,
               ),
             )
