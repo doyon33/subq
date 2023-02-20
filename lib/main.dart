@@ -40,11 +40,6 @@ class FirstPage extends StatelessWidget {
               margin: const EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
               alignment: Alignment.center,
               decoration: kContainerStyle,
-              // child: const Text(
-              //   "당신의 샌드위치 취향은 어떨까요?\n\n개인맞춤 서브웨이 메뉴 추천 서비스\n#꿀조합 #맛 #건강",
-              //   textAlign: TextAlign.center,
-              //   style: kLargeTextStyle,
-              // ),
               child: RichText(
                 textAlign: TextAlign.center,
                 text: TextSpan(children: [
@@ -120,20 +115,20 @@ Buttons btn_bread4 = Buttons('SUBWAY_BREAD_10004'); //허니오트
 Buttons btn_bread5 = Buttons('SUBWAY_BREAD_10005'); //하티
 Buttons btn_bread6 = Buttons('SUBWAY_BREAD_10006'); //플랫브레드
 //(main topping code) 2/17~18 이후에 수정된 코드가 적용되지 않음
-Buttons btn_main1 = Buttons('SUBWAY_MAINMENU_10017'); //에그마요
-Buttons btn_main2 = Buttons('SUBWAY_MAINMENU_10011'); //스테이크
-Buttons btn_main3 = Buttons('SUBWAY_MAINMENU_10016'); //참치
-Buttons btn_main4 = Buttons('SUBWAY_MAINMENU_10008'); //바비큐
-Buttons btn_main5 = Buttons('SUBWAY_MAINMENU_10014'); //쉬림프
-Buttons btn_main6 = Buttons('SUBWAY_MAINMENU_10006'); //치킨
-Buttons btn_main7 = Buttons('SUBWAY_MAINMENU_10009'); //햄
-Buttons btn_main8 = Buttons('SUBWAY_MAINMENU_10019'); //베이컨
-Buttons btn_main9 = Buttons('SUBWAY_MAINMENU_10018'); //베지
-Buttons btn_main10 = Buttons('SUBWAY_MAINMENU_10010'); //치킨브레스트햄
-Buttons btn_main11 = Buttons('SUBWAY_TOPPING_OTHER_10001'); //페퍼로니
-Buttons btn_main12 = Buttons('SUBWAY_TOPPING_OTHER_10002'); //살라미
-Buttons btn_main13 = Buttons('SUBWAY_MAINMENU_10008'); //치킨 데리야끼
-Buttons btn_main14 = Buttons('SUBWAY_MAINMENU_10005'); //로티세리 치킨
+Buttons btn_main1 = Buttons('SUBWAY_MAIN_TOPING_10010'); //에그마요
+Buttons btn_main2 = Buttons('SUBWAY_MAIN_TOPING_10004'); //스테이크
+Buttons btn_main3 = Buttons('SUBWAY_MAIN_TOPING_10009'); //참치
+Buttons btn_main4 = Buttons('SUBWAY_MAIN_TOPING_10001'); //바비큐
+Buttons btn_main5 = Buttons('SUBWAY_MAIN_TOPING_10007'); //쉬림프
+Buttons btn_main6 = Buttons('SUBWAY_MAIN_TOPING_10006'); //치킨 브레스트
+Buttons btn_main7 = Buttons('SUBWAY_MAIN_TOPING_10002'); //햄
+Buttons btn_main8 = Buttons('SUBWAY_MAIN_TOPING_10012'); //베이컨
+Buttons btn_main9 = Buttons('SUBWAY_MAIN_TOPING_10011'); //베지
+Buttons btn_main10 = Buttons('SUBWAY_MAIN_TOPING_10003'); //치킨브레스트햄
+Buttons btn_main11 = Buttons('SUBWAY_MAIN_TOPING_10013'); //페퍼로니
+Buttons btn_main12 = Buttons('SUBWAY_MAIN_TOPING_10014'); //살라미
+Buttons btn_main13 = Buttons('SUBWAY_MAIN_TOPING_10008'); //치킨 데리야끼
+Buttons btn_main14 = Buttons('SUBWAY_MAIN_TOPING_10005'); //로티세리 치킨
 //cheese
 Buttons btn_cheese1 = Buttons('SUBWAY_TOPPING_CHEESE_10001'); //아메리칸
 Buttons btn_cheese2 = Buttons('SUBWAY_TOPPING_CHEESE_10002'); //슈레드
@@ -147,7 +142,7 @@ Buttons btn_vege5 = Buttons('SUBWAY_TOPPING_BASIC_10005'); //양파
 Buttons btn_vege6 = Buttons('SUBWAY_TOPPING_BASIC_10006'); //피클
 Buttons btn_vege7 = Buttons('SUBWAY_TOPPING_BASIC_10007'); //올리브
 Buttons btn_vege8 = Buttons('SUBWAY_TOPPING_BASIC_10008'); //할라피뇨
-Buttons btn_vege9 = Buttons('SUBWAY_TOPPING_OTHER_10003'); //아보카도
+Buttons btn_vege9 = Buttons('SUBWAY_MAIN_TOPING_10015'); //아보카도
 //sauce
 Buttons btn_sauce1 = Buttons('SUBWAY_SAUCE_10014'); //랜치
 Buttons btn_sauce2 = Buttons('SUBWAY_SAUCE_10015'); //마요네즈
