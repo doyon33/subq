@@ -204,16 +204,16 @@ Widget buildTop(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(right: 10) ,
+                padding: const EdgeInsets.only(right: 10),
                 child: Text(
-                    category,
-                    style: kLargeTextStyle,
-                  ),
+                  category,
+                  style: kLargeTextStyle,
+                ),
               ),
               const Text(
-                  '잘 모르는 재료는 평가하지 않아도 됩니다.',
-                  style: kMediumTextStyle,
-                ),
+                '잘 모르는 재료는 평가하지 않아도 됩니다.',
+                style: kMediumTextStyle,
+              ),
             ],
           ),
         ),
@@ -304,6 +304,9 @@ Widget buildButtons(Buttons btn, func, BuildContext context) {
               ),
             ],
           ),
+          const SizedBox(
+            width: 1,
+          )
         ],
       )),
     ),
@@ -314,39 +317,36 @@ Widget buildButtons(Buttons btn, func, BuildContext context) {
 Widget toppingImg(BuildContext context, String menuName, String imgFile,
     {String toppingInfo = ''}) {
   return Container(
-      width: screenCheck(context) * 0.4,
-      height: screenHeight(context) * 0.15,
-      color: Colors.white,
-      padding: const EdgeInsets.only(
-        top: 5,
-        bottom: 5,
-      ),
-      child: FittedBox(
-        fit: BoxFit.fitHeight,
-        child: Column(
-          children: [
-            Text(
-              menuName,
-              style: kMediumBTextStyle,
-            ),
-            const SizedBox(
-              height: 5.0,
-            ),
-            Image.asset(
-              imgFile,
-              // width: 145,
-              height: screenHeight(context) * 0.08,
-            ),
-            const SizedBox(
-              height: 5.0,
-            ),
-            Text(
-              toppingInfo,
-              style: kTagTextStyle,
-            )
-          ],
+    width: screenCheck(context) * 0.4,
+    height: screenHeight(context) * 0.15,
+    color: Colors.white,
+    padding: const EdgeInsets.only(
+      top: 5,
+      bottom: 5,
+    ),
+    child: Column(
+      children: [
+        Text(
+          menuName,
+          style: kMediumBTextStyle,
         ),
-      ));
+        const SizedBox(
+          height: 5.0,
+        ),
+        Image.asset(
+          imgFile,
+          height: screenHeight(context) * 0.08,
+        ),
+        const SizedBox(
+          height: 5.0,
+        ),
+        Text(
+          toppingInfo,
+          style: kTagTextStyle,
+        )
+      ],
+    ),
+  );
 }
 
 //약관
