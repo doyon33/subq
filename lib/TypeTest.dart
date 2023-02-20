@@ -70,55 +70,54 @@ class _TestBread1State extends State<TestBread1> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 1, 0.076, '빵'),
+            buildTop(context, 1, 0.07, '빵'),
             Container(
-              // color: Colors.grey,
               margin: const EdgeInsets.only(left: 30, right: 30),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      toppingImg(
-                          context, '허니오트', 'assets/image/bread/honey_oat.png',
-                          toppingInfo: '#고소한_위트빵 #오트밀_가루'),
-                      buildButtons(btn_bread4, updateData, context),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      toppingImg(context, '하티', 'assets/image/bread/hearty.png',
-                          toppingInfo: '#화이트빵+옥수수_가루 #겉바속촉'),
-                      buildButtons(btn_bread5, updateData, context),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      toppingImg(context, '위트', 'assets/image/bread/wheat.png',
-                          toppingInfo: '#9가지_곡물 #건강 #고소'),
-                      buildButtons(btn_bread3, updateData, context)
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      toppingImg(context, '파마산 오레가노',
-                          'assets/image/bread/parmesan.png',
-                          toppingInfo: '#파마산_오레가노_시즈닝 #허브향'),
-                      buildButtons(btn_bread2, updateData, context)
-                    ],
-                  ),
-                  buildButton(context, const TestBread2(), '다음으로',
-                      func: printData(
-                          data1: btn_bread1.getDataCode(),
-                          data2: btn_bread2.getDataCode(),
-                          data3: btn_bread3.getDataCode(),
-                          data4: btn_bread4.getDataCode())),
-                ],
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        toppingImg(
+                            context, '허니오트', 'assets/image/bread/honey_oat.png',
+                            toppingInfo: '#고소한_위트빵 #오트밀_가루'),
+                        buildButtons(btn_bread4, updateData, context),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        toppingImg(context, '하티', 'assets/image/bread/hearty.png',
+                            toppingInfo: '#화이트빵+옥수수_가루 #겉바속촉'),
+                        buildButtons(btn_bread5, updateData, context),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        toppingImg(context, '위트', 'assets/image/bread/wheat.png',
+                            toppingInfo: '#9가지_곡물 #건강 #고소'),
+                        buildButtons(btn_bread3, updateData, context)
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        toppingImg(context, '파마산 오레가노',
+                            'assets/image/bread/parmesan.png',
+                            toppingInfo: '#파마산_오레가노_시즈닝 #허브향'),
+                        buildButtons(btn_bread2, updateData, context)
+                      ],
+                    ),
+                    buildButton(context, const TestBread2(), '다음으로',
+                        func: printData(
+                            data1: btn_bread1.getDataCode(),
+                            data2: btn_bread2.getDataCode(),
+                            data3: btn_bread3.getDataCode(),
+                            data4: btn_bread4.getDataCode())),
+                  ],
+                ),
               ),
-            )
           ]),
         ),
       ),
@@ -158,23 +157,30 @@ class _TestBread2State extends State<TestBread2> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 2, 0.153, '빵'),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '화이트', 'assets/image/bread/white.png',
-                    toppingInfo: '#클래식한_빵 #부드러움'),
-                buildButtons(btn_bread1, updateData, context),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(
-                    context, '플랫브레드', 'assets/image/bread/flat_bread.png',
-                    toppingInfo: '#납작한_모양 #쫀득쫀득'),
-                buildButtons(btn_bread6, updateData, context),
-              ],
+            buildTop(context, 2, 0.14, '빵'),
+            Container(
+              margin: const EdgeInsets.only(left: 30, right: 30),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '화이트', 'assets/image/bread/white.png',
+                          toppingInfo: '#클래식한_빵 #부드러움'),
+                      buildButtons(btn_bread1, updateData, context),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(
+                          context, '플랫브레드', 'assets/image/bread/flat_bread.png',
+                          toppingInfo: '#납작한_모양 #쫀득쫀득'),
+                      buildButtons(btn_bread6, updateData, context),
+                    ],
+                  ),
+                ],
+              ),
             ),
             buildButton(context, TestMain1(), '다음으로',
                 func: printData(
@@ -218,34 +224,41 @@ class _TestMain1State extends State<TestMain1> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 3, 0.23, '메인 메뉴'),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '에그마요', 'assets/image/main/eggmayo.png'),
-                buildButtons(btn_main1, updateData, context),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '스테이크', 'assets/image/main/steak.png'),
-                buildButtons(btn_main2, updateData, context),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '참치', 'assets/image/main/tuna.png'),
-                buildButtons(btn_main3, updateData, context)
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '바비큐', 'assets/image/main/bbq.png'),
-                buildButtons(btn_main4, updateData, context)
-              ],
+            buildTop(context, 3, 0.21, '메인 메뉴'),
+            Container(
+              margin: const EdgeInsets.only(left: 30, right: 30),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '에그마요', 'assets/image/main/eggmayo.png'),
+                      buildButtons(btn_main1, updateData, context),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '스테이크', 'assets/image/main/steak.png'),
+                      buildButtons(btn_main2, updateData, context),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '참치', 'assets/image/main/tuna.png'),
+                      buildButtons(btn_main3, updateData, context)
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '바비큐', 'assets/image/main/bbq.png'),
+                      buildButtons(btn_main4, updateData, context)
+                    ],
+                  ),
+                ],
+              ),
             ),
             buildButton(context, const TestMain2(), '다음으로',
                 func: printData(
@@ -290,34 +303,41 @@ class _TestMain2State extends State<TestMain2> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 4, 0.307, '메인 메뉴'),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '쉬림프', 'assets/image/main/shrimp.png'),
-                buildButtons(btn_main5, updateData, context),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '치킨 브레스트', 'assets/image/main/chicken.png'),
-                buildButtons(btn_main6, updateData, context),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '햄', 'assets/image/main/ham.png'),
-                buildButtons(btn_main7, updateData, context)
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '베이컨', 'assets/image/main/bacon.png'),
-                buildButtons(btn_main8, updateData, context)
-              ],
+            buildTop(context, 4, 0.28, '메인 메뉴'),
+            Container(
+              margin: const EdgeInsets.only(left: 30, right: 30),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '새우', 'assets/image/main/shrimp.png'),
+                      buildButtons(btn_main5, updateData, context),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '치킨 브레스트', 'assets/image/main/chicken.png'),
+                      buildButtons(btn_main6, updateData, context),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '햄', 'assets/image/main/ham.png'),
+                      buildButtons(btn_main7, updateData, context)
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '베이컨', 'assets/image/main/bacon.png'),
+                      buildButtons(btn_main8, updateData, context)
+                    ],
+                  ),
+                ],
+              ),
             ),
             buildButton(context, const TestMain3(), '다음으로',
                 func: printData(
@@ -362,35 +382,42 @@ class _TestMain3State extends State<TestMain3> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 5, 0.384, '메인 메뉴'),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '베지', 'assets/image/menu/veggie.png'),
-                buildButtons(btn_main9, updateData, context),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '치킨브레스트햄',
-                    'assets/image/main/chicken_breast_ham.png'),
-                buildButtons(btn_main10, updateData, context),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '페퍼로니', 'assets/image/main/pepperoni.png'),
-                buildButtons(btn_main11, updateData, context)
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '살라미', 'assets/image/main/salami.png'),
-                buildButtons(btn_main12, updateData, context)
-              ],
+            buildTop(context, 5, 0.35, '메인 메뉴'),
+            Container(
+              margin: const EdgeInsets.only(left: 30, right: 30),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '베지', 'assets/image/menu/veggie.png'),
+                      buildButtons(btn_main9, updateData, context),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '치킨브레스트햄',
+                          'assets/image/main/chicken_breast_ham.png'),
+                      buildButtons(btn_main10, updateData, context),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '페퍼로니', 'assets/image/main/pepperoni.png'),
+                      buildButtons(btn_main11, updateData, context)
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '살라미', 'assets/image/main/salami.png'),
+                      buildButtons(btn_main12, updateData, context)
+                    ],
+                  ),
+                ],
+              ),
             ),
             buildButton(context, const TestMain4(), '다음으로',
                 func: printData(
@@ -435,21 +462,28 @@ class _TestMain4State extends State<TestMain4> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 6, 0.384, '메인 메뉴'),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '치킨 데리야끼', 'assets/image/main/chicken_teriyaki.png'),
-                buildButtons(btn_main13, updateData, context),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '로티세리 치킨',
-                    'assets/image/main/rotisserie_chicken.png'),
-                buildButtons(btn_main14, updateData, context),
-              ],
+            buildTop(context, 6, 0.42, '메인 메뉴'),
+            Container(
+              margin: const EdgeInsets.only(left: 30, right: 30),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '치킨 데리야끼', 'assets/image/main/chicken_teriyaki.png'),
+                      buildButtons(btn_main13, updateData, context),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '로티세리 치킨',
+                          'assets/image/main/rotisserie_chicken.png'),
+                      buildButtons(btn_main14, updateData, context),
+                    ],
+                  ),
+                ],
+              ),
             ),
             buildButton(context, const TestCheese(), '다음으로')
           ]),
@@ -489,30 +523,37 @@ class _TestCheeseState extends State<TestCheese> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 7, 0.46, '치즈'),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(
-                    context, '아메리칸 치즈', 'assets/image/cheese/american.png'),
-                buildButtons(btn_cheese1, updateData, context),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(
-                    context, '슈레드 치즈', 'assets/image/cheese/shredded.png'),
-                buildButtons(btn_cheese2, updateData, context),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(
-                    context, '모차렐라 치즈', 'assets/image/cheese/mozzarella.png'),
-                buildButtons(btn_cheese3, updateData, context)
-              ],
+            buildTop(context, 7, 0.49, '치즈'),
+            Container(
+              margin: const EdgeInsets.only(left: 30, right: 30),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(
+                          context, '아메리칸 치즈', 'assets/image/cheese/american.png'),
+                      buildButtons(btn_cheese1, updateData, context),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(
+                          context, '슈레드 치즈', 'assets/image/cheese/shredded.png'),
+                      buildButtons(btn_cheese2, updateData, context),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(
+                          context, '모차렐라 치즈', 'assets/image/cheese/mozzarella.png'),
+                      buildButtons(btn_cheese3, updateData, context)
+                    ],
+                  ),
+                ],
+              ),
             ),
             buildButton(context, const TestVege1(), '다음으로',
                 func: printData(
@@ -556,36 +597,43 @@ class _TestVege1State extends State<TestVege1> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 8, 0.53, '야채'),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(
-                    context, '양상추', 'assets/image/vegetable/lettuce.png'),
-                buildButtons(btn_vege1, updateData, context),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '토마토', 'assets/image/vegetable/tomato.png'),
-                buildButtons(btn_vege2, updateData, context),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(
-                    context, '오이', 'assets/image/vegetable/cucumber.png'),
-                buildButtons(btn_vege3, updateData, context)
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '피망', 'assets/image/vegetable/pepper.png'),
-                buildButtons(btn_vege4, updateData, context)
-              ],
+            buildTop(context, 8, 0.56, '야채'),
+            Container(
+              margin: const EdgeInsets.only(left: 30, right: 30),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(
+                          context, '양상추', 'assets/image/vegetable/lettuce.png'),
+                      buildButtons(btn_vege1, updateData, context),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '토마토', 'assets/image/vegetable/tomato.png'),
+                      buildButtons(btn_vege2, updateData, context),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(
+                          context, '오이', 'assets/image/vegetable/cucumber.png'),
+                      buildButtons(btn_vege3, updateData, context)
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '피망', 'assets/image/vegetable/pepper.png'),
+                      buildButtons(btn_vege4, updateData, context)
+                    ],
+                  ),
+                ],
+              ),
             ),
             buildButton(context, const TestVege2(), '다음으로',
                 func: printData(
@@ -630,35 +678,42 @@ class _TestVege2State extends State<TestVege2> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 9, 0.615, '야채'),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '양파', 'assets/image/vegetable/onion.png'),
-                buildButtons(btn_vege5, updateData, context),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '피클', 'assets/image/vegetable/pickle.png'),
-                buildButtons(btn_vege6, updateData, context),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '올리브', 'assets/image/vegetable/olive.png'),
-                buildButtons(btn_vege7, updateData, context)
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(
-                    context, '할라피뇨', 'assets/image/vegetable/jalapeno.png'),
-                buildButtons(btn_vege8, updateData, context)
-              ],
+            buildTop(context, 9, 0.63, '야채'),
+            Container(
+              margin: const EdgeInsets.only(left: 30, right: 30),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '양파', 'assets/image/vegetable/onion.png'),
+                      buildButtons(btn_vege5, updateData, context),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '피클', 'assets/image/vegetable/pickle.png'),
+                      buildButtons(btn_vege6, updateData, context),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '올리브', 'assets/image/vegetable/olive.png'),
+                      buildButtons(btn_vege7, updateData, context)
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(
+                          context, '할라피뇨', 'assets/image/vegetable/jalapeno.png'),
+                      buildButtons(btn_vege8, updateData, context)
+                    ],
+                  ),
+                ],
+              ),
             ),
             buildButton(context, const TestVege3(), '다음으로',
                 func: printData(
@@ -703,14 +758,17 @@ class _TestVege3State extends State<TestVege3> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 10, 0.692, '야채'),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(
-                    context, '아보카도', 'assets/image/vegetable/avocado.png'),
-                buildButtons(btn_vege9, updateData, context),
-              ],
+            buildTop(context, 10, 0.7, '야채'),
+            Container(
+              margin: const EdgeInsets.only(left: 30, right: 30),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  toppingImg(
+                      context, '아보카도', 'assets/image/vegetable/avocado.png'),
+                  buildButtons(btn_vege9, updateData, context),
+                ],
+              ),
             ),
             buildButton(context, const TestSauce1(), '다음으로',
                 func: printData(data1: btn_vege9.getDataCode()))
@@ -751,40 +809,47 @@ class _TestSauce1State extends State<TestSauce1> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 11, 0.769, '소스'),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '랜치', 'assets/image/sauce/ranch.png',
-                    toppingInfo: '#고소한_마요네즈 #레몬즙'),
-                buildButtons(btn_sauce1, updateData, context),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '마요네즈', 'assets/image/sauce/mayo.png',
-                    toppingInfo: '#고소'),
-                buildButtons(btn_sauce2, updateData, context),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(
-                    context, '스위트 어니언', 'assets/image/sauce/sweet_onion.png',
-                    toppingInfo: '#써브웨이_특제_소스 #달콤'),
-                buildButtons(btn_sauce3, updateData, context)
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(
-                    context, '허니 머스타드', 'assets/image/sauce/honey_mustard.png',
-                    toppingInfo: '#달콤 #겨자'),
-                buildButtons(btn_sauce4, updateData, context)
-              ],
+            buildTop(context, 11, 0.77, '소스'),
+            Container(
+              margin: const EdgeInsets.only(left: 30, right: 30),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '랜치', 'assets/image/sauce/ranch.png',
+                          toppingInfo: '#고소한_마요네즈 #레몬즙'),
+                      buildButtons(btn_sauce1, updateData, context),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '마요네즈', 'assets/image/sauce/mayo.png',
+                          toppingInfo: '#고소'),
+                      buildButtons(btn_sauce2, updateData, context),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(
+                          context, '스위트 어니언', 'assets/image/sauce/sweet_onion.png',
+                          toppingInfo: '#써브웨이_특제_소스 #달콤'),
+                      buildButtons(btn_sauce3, updateData, context)
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(
+                          context, '허니 머스타드', 'assets/image/sauce/honey_mustard.png',
+                          toppingInfo: '#달콤 #겨자'),
+                      buildButtons(btn_sauce4, updateData, context)
+                    ],
+                  ),
+                ],
+              ),
             ),
             buildButton(context, const TestSauce2(), '다음으로',
                 func: printData(
@@ -829,40 +894,47 @@ class _TestSauce2State extends State<TestSauce2> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 12, 0.846, '소스'),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(
-                    context, '스위트 칠리', 'assets/image/sauce/sweet_chilli.png',
-                    toppingInfo: '#칠리 #매콤 #달콤'),
-                buildButtons(btn_sauce5, updateData, context),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '핫 칠리', 'assets/image/sauce/hot_chilli.png',
-                    toppingInfo: '#진짜_매운맛'),
-                buildButtons(btn_sauce6, updateData, context),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, 'NEW 사우스 웨스트 치폴레',
-                    'assets/image/sauce/new_southwest_chipotle.png',
-                    toppingInfo: '#핫칠리+마요네즈 #이국적인_맛'),
-                buildButtons(btn_sauce7, updateData, context)
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '머스타드', 'assets/image/sauce/mustard.png',
-                    toppingInfo: '#오리지날_옐로우_머스타드'),
-                buildButtons(btn_sauce8, updateData, context)
-              ],
+            buildTop(context, 12, 0.84, '소스'),
+            Container(
+              margin: const EdgeInsets.only(left: 30, right: 30),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(
+                          context, '스위트 칠리', 'assets/image/sauce/sweet_chilli.png',
+                          toppingInfo: '#칠리 #매콤 #달콤'),
+                      buildButtons(btn_sauce5, updateData, context),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '핫 칠리', 'assets/image/sauce/hot_chilli.png',
+                          toppingInfo: '#진짜_매운맛'),
+                      buildButtons(btn_sauce6, updateData, context),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, 'NEW 사우스 웨스트 치폴레',
+                          'assets/image/sauce/new_southwest_chipotle.png',
+                          toppingInfo: '#핫칠리+마요네즈 #이국적인_맛'),
+                      buildButtons(btn_sauce7, updateData, context)
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '머스타드', 'assets/image/sauce/mustard.png',
+                          toppingInfo: '#오리지날_옐로우_머스타드'),
+                      buildButtons(btn_sauce8, updateData, context)
+                    ],
+                  ),
+                ],
+              ),
             ),
             buildButton(context, const TestSauce3(), '다음으로',
                 func: printData(
@@ -907,40 +979,47 @@ class _TestSauce3State extends State<TestSauce3> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 13, 0.923, '소스'),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(
-                    context, '홀스래디쉬', 'assets/image/sauce/horseradish.png',
-                    toppingInfo: '#고소한_마요네즈 #고추냉이'),
-                buildButtons(btn_sauce9, updateData, context),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(
-                    context, '올리브 오일', 'assets/image/sauce/olive_oil.png',
-                    toppingInfo: '#담백 #깔끔'),
-                buildButtons(btn_sauce10, updateData, context),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '레드와인식초', 'assets/image/sauce/red_wine.png',
-                    toppingInfo: '#풍미_가득'),
-                buildButtons(btn_sauce11, updateData, context)
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '소금', 'assets/image/sauce/salt.png',
-                    toppingInfo: '소금'),
-                buildButtons(btn_sauce12, updateData, context)
-              ],
+            buildTop(context, 13, 0.91, '소스'),
+            Container(
+              margin: const EdgeInsets.only(left: 30, right: 30),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(
+                          context, '홀스래디쉬', 'assets/image/sauce/horseradish.png',
+                          toppingInfo: '#고소한_마요네즈 #고추냉이'),
+                      buildButtons(btn_sauce9, updateData, context),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(
+                          context, '올리브 오일', 'assets/image/sauce/olive_oil.png',
+                          toppingInfo: '#담백 #깔끔'),
+                      buildButtons(btn_sauce10, updateData, context),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '레드와인식초', 'assets/image/sauce/red_wine.png',
+                          toppingInfo: '#풍미_가득'),
+                      buildButtons(btn_sauce11, updateData, context)
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '소금', 'assets/image/sauce/salt.png',
+                          toppingInfo: '소금'),
+                      buildButtons(btn_sauce12, updateData, context)
+                    ],
+                  ),
+                ],
+              ),
             ),
             buildButton(context, const TestSauce4(), '다음으로',
                 func: printData(
@@ -985,22 +1064,29 @@ class _TestSauce4State extends State<TestSauce4> {
           child: Column(children: [
             TestAppBar(context),
             buildTop(context, 14, 1, '소스'),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(context, '후추', 'assets/image/sauce/black_pepper.png',
-                    toppingInfo: '#후추'),
-                buildButtons(btn_sauce13, updateData, context),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                toppingImg(
-                    context, '스모크 바비큐', 'assets/image/sauce/smoke_bbq.png',
-                    toppingInfo: '#스모크_향 #달콤한_바비큐'),
-                buildButtons(btn_sauce14, updateData, context),
-              ],
+            Container(
+              margin: const EdgeInsets.only(left: 30, right: 30),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '후추', 'assets/image/sauce/black_pepper.png',
+                          toppingInfo: '#후추'),
+                      buildButtons(btn_sauce13, updateData, context),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(
+                          context, '스모크 바비큐', 'assets/image/sauce/smoke_bbq.png',
+                          toppingInfo: '#스모크_향 #달콤한_바비큐'),
+                      buildButtons(btn_sauce14, updateData, context),
+                    ],
+                  ),
+                ],
+              ),
             ),
             buildButton(context, const TestResultLoading(), '다음으로',
                 func: printData(
