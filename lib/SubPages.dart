@@ -87,13 +87,6 @@ class TermsPage extends StatelessWidget {
   }
 }
 
-//reservation page data
-var age = 0;
-var gender = 0; //1 is male, 2 is female
-var job = 0;
-var email = '';
-var phone = '';
-var opinion = '';
 
 // ignore: must_be_immutable
 class ReservationPage extends StatefulWidget {
@@ -116,17 +109,20 @@ class _ReservationPageState extends State<ReservationPage> {
     super.dispose();
   }
 
-  bool age1 = false; //age
-  bool age2 = false;
-  bool age3 = false;
-  bool age4 = false;
+  // 나이 변수
+  bool age1 = false;  //10대
+  bool age2 = false;  //20대
+  bool age3 = false;  //30대
+  bool age4 = false;  //40대 이상
 
-  bool gender1 = false;
-  bool gender2 = false;
+  // 성별 변수
+  bool gender1 = false;  //남성
+  bool gender2 = false;  //여성
 
-  bool job1 = false;
-  bool job2 = false;
-  bool job3 = false;
+  //직업 변수
+  bool job1 = false;  //대학생
+  bool job2 = false;  //직장인
+  bool job3 = false;  //기타
 
   @override
   Widget build(BuildContext context) {
@@ -616,7 +612,7 @@ class CompletePage extends StatelessWidget {
   Widget build(BuildContext context) {
     //print for checking data
     if (kDebugMode) {
-      print('email(SubPages.dart:93) : $email');
+      print('email(SubPages.dart:93) : $age');
       print('phone(SubPages.dart:94) : $phone');
       print('age(SubPages.dart:90) : $age');
       print('gender(SubPages.dart:91) : $gender');
