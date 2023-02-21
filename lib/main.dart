@@ -158,3 +158,11 @@ Buttons btn_sauce11 = Buttons('SUBWAY_SAUCE_10009'); //레드와인식초
 Buttons btn_sauce12 = Buttons('SUBWAY_SAUCE_10020'); //소금
 Buttons btn_sauce13 = Buttons('SUBWAY_SAUCE_10021'); //후추
 Buttons btn_sauce14 = Buttons('SUBWAY_SAUCE_10013'); //스모크 바비큐
+
+// 정식 런칭 사전 예약 데이터
+var age = 0;    // 1 = 10대, 2 = 20대, 3 = 30대, 4 = 40대 이상
+var gender = 0; // 1 = 남성, 2 = 여성
+var job = 0;    // 1 = 대학생, 2 = 직장인, 3 = 기타
+var email = '';
+var phone = '';
+var opinion = '';
