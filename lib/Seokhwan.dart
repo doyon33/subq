@@ -88,8 +88,8 @@ class Utils {
 
   static Future<dynamic> call() async {
     var res = await http.post(
-      Uri.parse('http://192.168.0.9:54321/api/public/meal-plan/list-get'),
-      //Uri.parse('https://dev.tastybit.kr/api/public/meal-plan/list-get'),
+      //Uri.parse('http://192.168.0.9:54321/api/public/meal-plan/list-get'),
+      Uri.parse('https://dev.tastybit.kr/api/public/meal-plan/list-get'),
       headers: {"Content-Type": "application/json"},
       body: getJsonString(),
     );
@@ -98,10 +98,10 @@ class Utils {
 
   static Future<dynamic> addPreSubcriber() async {
     var res = await http.post(
-      Uri.parse(
-          'http://192.168.0.9:54321/api/public/meal-plan/add-presubcriber'),
       // Uri.parse(
-      //     'https://dev.tastybit.kr/api/public/meal-plan/add-presubcriber'),
+      //     'http://192.168.0.9:54321/api/public/meal-plan/add-presubcriber'),
+      Uri.parse(
+          'https://dev.tastybit.kr/api/public/meal-plan/add-presubcriber'),
       headers: {"Content-Type": "application/json"},
       body: jsonEncode(
         {
