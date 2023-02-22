@@ -70,7 +70,7 @@ class _TestBread1State extends State<TestBread1> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 1, 0.07, '빵'),
+            buildTop(context, 1, 0.07, '브레드'),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
                 child: Column(
@@ -157,7 +157,7 @@ class _TestBread2State extends State<TestBread2> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 2, 0.14, '빵'),
+            buildTop(context, 2, 0.15, '브레드'),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -182,7 +182,7 @@ class _TestBread2State extends State<TestBread2> {
                 ],
               ),
             ),
-            buildButton(context, TestMain1(), '다음으로',
+            buildButton(context, const TestMain1(), '다음으로',
                 func: printData(
                     data1: btn_bread5.getDataCode(),
                     data2: btn_bread6.getDataCode()))
@@ -224,7 +224,7 @@ class _TestMain1State extends State<TestMain1> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 3, 0.21, '메인 메뉴'),
+            buildTop(context, 3, 0.23, '메인 토핑'),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -303,7 +303,7 @@ class _TestMain2State extends State<TestMain2> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 4, 0.28, '메인 메뉴'),
+            buildTop(context, 4, 0.3, '메인 토핑'),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -311,7 +311,7 @@ class _TestMain2State extends State<TestMain2> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      toppingImg(context, '새우', 'assets/image/main/shrimp.png'),
+                      toppingImg(context, '쉬림프', 'assets/image/main/shrimp.png'),
                       buildButtons(btn_main5, updateData, context),
                     ],
                   ),
@@ -382,7 +382,7 @@ class _TestMain3State extends State<TestMain3> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 5, 0.35, '메인 메뉴'),
+            buildTop(context, 5, 0.38, '메인 토핑'),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -390,7 +390,7 @@ class _TestMain3State extends State<TestMain3> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      toppingImg(context, '베지', 'assets/image/menu/veggie.png'),
+                      toppingImg(context, '아보카도', 'assets/image/main/avocado.png'),
                       buildButtons(btn_main9, updateData, context),
                     ],
                   ),
@@ -462,7 +462,7 @@ class _TestMain4State extends State<TestMain4> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 6, 0.42, '메인 메뉴'),
+            buildTop(context, 6, 0.46, '메인 토핑'),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -480,6 +480,14 @@ class _TestMain4State extends State<TestMain4> {
                       toppingImg(context, '로티세리 치킨',
                           'assets/image/main/rotisserie_chicken.png'),
                       buildButtons(btn_main14, updateData, context),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      toppingImg(context, '베지',
+                          'assets/image/main/veggie.png'),
+                      buildButtons(btn_main15, updateData, context),
                     ],
                   ),
                 ],
@@ -523,7 +531,7 @@ class _TestCheeseState extends State<TestCheese> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 7, 0.49, '치즈'),
+            buildTop(context, 7, 0.53, '치즈'),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -597,7 +605,7 @@ class _TestVege1State extends State<TestVege1> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 8, 0.56, '야채'),
+            buildTop(context, 8, 0.61, '야채'),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -678,7 +686,7 @@ class _TestVege2State extends State<TestVege2> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 9, 0.63, '야채'),
+            buildTop(context, 9, 0.7, '야채'),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -715,63 +723,12 @@ class _TestVege2State extends State<TestVege2> {
                 ],
               ),
             ),
-            buildButton(context, const TestVege3(), '다음으로',
+            buildButton(context, const TestSauce1(), '다음으로',
                 func: printData(
                     data1: btn_vege5.getDataCode(),
                     data2: btn_vege6.getDataCode(),
                     data3: btn_vege7.getDataCode(),
                     data4: btn_vege8.getDataCode()))
-          ]),
-        ),
-      ),
-    );
-  }
-
-  void updateData(int num, Buttons btn) {
-    setState(() {
-      if (num == 1) {
-        btn.clickBad();
-      } else if (num == 2) {
-        btn.clickGood();
-      } else if (num == 3) {
-        btn.clickNice();
-      }
-    });
-  }
-}
-
-//type test : vegetable_page3
-class TestVege3 extends StatefulWidget {
-  const TestVege3({Key? key}) : super(key: key);
-
-  @override
-  State<TestVege3> createState() => _TestVege3State();
-}
-
-class _TestVege3State extends State<TestVege3> {
-  Widget build(BuildContext context) {
-    return Material(
-      color: materialColor,
-      child: Center(
-        child: Container(
-          width: screenCheck(context),
-          color: Colors.white,
-          child: Column(children: [
-            TestAppBar(context),
-            buildTop(context, 10, 0.7, '야채'),
-            Container(
-              margin: const EdgeInsets.only(left: 30, right: 30),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  toppingImg(
-                      context, '아보카도', 'assets/image/vegetable/avocado.png'),
-                  buildButtons(btn_vege9, updateData, context),
-                ],
-              ),
-            ),
-            buildButton(context, const TestSauce1(), '다음으로',
-                func: printData(data1: btn_vege9.getDataCode()))
           ]),
         ),
       ),
@@ -809,7 +766,7 @@ class _TestSauce1State extends State<TestSauce1> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 11, 0.77, '소스'),
+            buildTop(context, 10, 0.77, '소스'),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -894,7 +851,7 @@ class _TestSauce2State extends State<TestSauce2> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 12, 0.84, '소스'),
+            buildTop(context, 11, 0.84, '소스'),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -908,6 +865,7 @@ class _TestSauce2State extends State<TestSauce2> {
                       buildButtons(btn_sauce5, updateData, context),
                     ],
                   ),
+                  // greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -916,6 +874,7 @@ class _TestSauce2State extends State<TestSauce2> {
                       buildButtons(btn_sauce6, updateData, context),
                     ],
                   ),
+                  // greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -925,6 +884,7 @@ class _TestSauce2State extends State<TestSauce2> {
                       buildButtons(btn_sauce7, updateData, context)
                     ],
                   ),
+                  // greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -979,7 +939,7 @@ class _TestSauce3State extends State<TestSauce3> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 13, 0.91, '소스'),
+            buildTop(context, 12, 0.92, '소스'),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -993,6 +953,7 @@ class _TestSauce3State extends State<TestSauce3> {
                       buildButtons(btn_sauce9, updateData, context),
                     ],
                   ),
+                  // greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -1002,6 +963,7 @@ class _TestSauce3State extends State<TestSauce3> {
                       buildButtons(btn_sauce10, updateData, context),
                     ],
                   ),
+                  // greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -1010,11 +972,12 @@ class _TestSauce3State extends State<TestSauce3> {
                       buildButtons(btn_sauce11, updateData, context)
                     ],
                   ),
+                  // greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       toppingImg(context, '소금', 'assets/image/sauce/salt.png',
-                          toppingInfo: '소금'),
+                          toppingInfo: '#소금'),
                       buildButtons(btn_sauce12, updateData, context)
                     ],
                   ),
@@ -1063,7 +1026,7 @@ class _TestSauce4State extends State<TestSauce4> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 14, 1, '소스'),
+            buildTop(context, 13, 1, '소스'),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -1076,6 +1039,7 @@ class _TestSauce4State extends State<TestSauce4> {
                       buildButtons(btn_sauce13, updateData, context),
                     ],
                   ),
+                  // greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
