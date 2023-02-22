@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:subq/SubPages.dart';
 import 'TypeTest.dart';
 import 'AppBar.dart';
 import 'constants.dart';
@@ -123,12 +124,13 @@ Buttons btn_main5 = Buttons('SUBWAY_MAIN_TOPING_10007'); //쉬림프
 Buttons btn_main6 = Buttons('SUBWAY_MAIN_TOPING_10006'); //치킨 브레스트
 Buttons btn_main7 = Buttons('SUBWAY_MAIN_TOPING_10002'); //햄
 Buttons btn_main8 = Buttons('SUBWAY_MAIN_TOPING_10012'); //베이컨
-Buttons btn_main9 = Buttons('SUBWAY_MAIN_TOPING_10011'); //베지
+Buttons btn_main9 = Buttons('SUBWAY_MAIN_TOPING_10015'); //아보카도
 Buttons btn_main10 = Buttons('SUBWAY_MAIN_TOPING_10003'); //치킨브레스트햄
 Buttons btn_main11 = Buttons('SUBWAY_MAIN_TOPING_10013'); //페퍼로니
 Buttons btn_main12 = Buttons('SUBWAY_MAIN_TOPING_10014'); //살라미
 Buttons btn_main13 = Buttons('SUBWAY_MAIN_TOPING_10008'); //치킨 데리야끼
 Buttons btn_main14 = Buttons('SUBWAY_MAIN_TOPING_10005'); //로티세리 치킨
+Buttons btn_main15 = Buttons('SUBWAY_MAIN_TOPING_10011'); //베지
 //cheese
 Buttons btn_cheese1 = Buttons('SUBWAY_TOPPING_CHEESE_10001'); //아메리칸
 Buttons btn_cheese2 = Buttons('SUBWAY_TOPPING_CHEESE_10002'); //슈레드
