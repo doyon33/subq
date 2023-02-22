@@ -37,9 +37,6 @@ class Buttons {
       pressed = 0;
       imgFile1 = 'assets/image/icon/bad.png';
     }
-    // if (kDebugMode) {
-    //   print('($toppingCode) : ($pressed)');
-    // }
   }
 
   void clickGood() {
