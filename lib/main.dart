@@ -144,7 +144,6 @@ Buttons btn_vege5 = Buttons('SUBWAY_TOPPING_BASIC_10005'); //양파
 Buttons btn_vege6 = Buttons('SUBWAY_TOPPING_BASIC_10006'); //피클
 Buttons btn_vege7 = Buttons('SUBWAY_TOPPING_BASIC_10007'); //올리브
 Buttons btn_vege8 = Buttons('SUBWAY_TOPPING_BASIC_10008'); //할라피뇨
-Buttons btn_vege9 = Buttons('SUBWAY_MAIN_TOPING_10015'); //아보카도
 //sauce
 Buttons btn_sauce1 = Buttons('SUBWAY_SAUCE_10014'); //랜치
 Buttons btn_sauce2 = Buttons('SUBWAY_SAUCE_10015'); //마요네즈
