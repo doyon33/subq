@@ -294,7 +294,7 @@ class _MenuInfoState extends State<MenuInfo> {
                       children: const [
                         Text('열량(kcal)\n', style: kMediumTextStyle),
                         Text('탄수화물(g)\n', style: kMediumTextStyle),
-                        Text('포화지방(g)\n', style: kMediumTextStyle),
+                        Text('지방(g)\n', style: kMediumTextStyle),
                         Text('식이섬유(g)\n', style: kMediumTextStyle),
                         Text('단백질(g)', style: kMediumTextStyle)
                       ],
