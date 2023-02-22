@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:subq/AppBar.dart';
+import 'package:subq/Seokhwan.dart';
 import 'package:subq/main.dart';
 import 'constants.dart';
 
@@ -18,10 +19,7 @@ class TermsPage extends StatelessWidget {
           color: Colors.white,
           child: Column(
             children: [
-              MainAppBar(
-                context,
-                iconBtn: backIcon(context)
-              ),
+              MainAppBar(context, iconBtn: backIcon(context)),
               Expanded(
                   child: SingleChildScrollView(
                 child: Container(
@@ -87,7 +85,6 @@ class TermsPage extends StatelessWidget {
   }
 }
 
-
 // ignore: must_be_immutable
 class ReservationPage extends StatefulWidget {
   const ReservationPage({Key? key}) : super(key: key);
@@ -110,19 +107,19 @@ class _ReservationPageState extends State<ReservationPage> {
   }
 
   // 나이 변수
-  bool age1 = false;  //10대
-  bool age2 = false;  //20대
-  bool age3 = false;  //30대
-  bool age4 = false;  //40대 이상
+  bool age1 = false; //10대
+  bool age2 = false; //20대
+  bool age3 = false; //30대
+  bool age4 = false; //40대 이상
 
   // 성별 변수
-  bool gender1 = false;  //남성
-  bool gender2 = false;  //여성
+  bool gender1 = false; //남성
+  bool gender2 = false; //여성
 
   //직업 변수
-  bool job1 = false;  //대학생
-  bool job2 = false;  //직장인
-  bool job3 = false;  //기타
+  bool job1 = false; //대학생
+  bool job2 = false; //직장인
+  bool job3 = false; //기타
 
   @override
   Widget build(BuildContext context) {
@@ -133,10 +130,7 @@ class _ReservationPageState extends State<ReservationPage> {
         color: Colors.white,
         width: screenCheck(context),
         child: (ListView(children: [
-          MainAppBar(
-            context,
-            iconBtn: backIcon(context)
-          ),
+          MainAppBar(context, iconBtn: backIcon(context)),
           const SizedBox(
             height: 30,
           ),
@@ -576,6 +570,9 @@ class _ReservationPageState extends State<ReservationPage> {
                         ),
                         InkWell(
                           onTap: () {
+                            Utils.addPreSubcriber();
+                            // print(
+                            //     '$age,$gender, $job, $email, $phone, $opinion');
                             email = _emailEditCtr.text;
                             Navigator.push(
                                 context,
@@ -629,10 +626,7 @@ class CompletePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              MainAppBar(
-                context,
-                iconBtn: backIcon(context)
-              ),
+              MainAppBar(context, iconBtn: backIcon(context)),
               Column(
                 children: [
                   Padding(

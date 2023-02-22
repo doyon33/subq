@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:subq/TestResult.dart';
+import 'main.dart';
 
 // 메뉴에 해당하는 이미지 파일을 불러오기 위한 Map
 Map<String, String> imgFileMap = {
@@ -87,12 +88,33 @@ class Utils {
 
   static Future<dynamic> call() async {
     var res = await http.post(
-      //Uri.parse('http://192.168.0.9:54321/api/public/meal-plan/list-get'),
-      Uri.parse('https://dev.tastybit.kr/api/public/meal-plan/list-get'),
+      Uri.parse('http://192.168.0.9:54321/api/public/meal-plan/list-get'),
+      //Uri.parse('https://dev.tastybit.kr/api/public/meal-plan/list-get'),
       headers: {"Content-Type": "application/json"},
       body: getJsonString(),
     );
     return jsonDecode(res.body);
+  }
+
+  static Future<dynamic> addPreSubcriber() async {
+    var res = await http.post(
+      Uri.parse(
+          'http://192.168.0.9:54321/api/public/meal-plan/add-presubcriber'),
+      // Uri.parse(
+      //     'https://dev.tastybit.kr/api/public/meal-plan/add-presubcriber'),
+      headers: {"Content-Type": "application/json"},
+      body: jsonEncode(
+        {
+          'age': age,
+          'gender': gender,
+          'job': job,
+          'email': email,
+          'phone': phone,
+          'opinion': opinion,
+        },
+      ),
+    );
+    return res.body;
   }
 
   static void printMenu(dynamic jboj) {
