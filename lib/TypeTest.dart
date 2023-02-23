@@ -84,6 +84,7 @@ class _TestBread1State extends State<TestBread1> {
                         buildButtons(btn_bread4, updateData, context),
                       ],
                     ),
+                    greyLine(context),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -92,6 +93,7 @@ class _TestBread1State extends State<TestBread1> {
                         buildButtons(btn_bread5, updateData, context),
                       ],
                     ),
+                    greyLine(context),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -100,6 +102,7 @@ class _TestBread1State extends State<TestBread1> {
                         buildButtons(btn_bread3, updateData, context)
                       ],
                     ),
+                    greyLine(context),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -170,6 +173,7 @@ class _TestBread2State extends State<TestBread2> {
                       buildButtons(btn_bread1, updateData, context),
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -236,6 +240,7 @@ class _TestMain1State extends State<TestMain1> {
                       buildButtons(btn_main1, updateData, context),
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -243,6 +248,7 @@ class _TestMain1State extends State<TestMain1> {
                       buildButtons(btn_main2, updateData, context),
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -250,6 +256,7 @@ class _TestMain1State extends State<TestMain1> {
                       buildButtons(btn_main3, updateData, context)
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -315,6 +322,7 @@ class _TestMain2State extends State<TestMain2> {
                       buildButtons(btn_main5, updateData, context),
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -322,6 +330,7 @@ class _TestMain2State extends State<TestMain2> {
                       buildButtons(btn_main6, updateData, context),
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -329,6 +338,7 @@ class _TestMain2State extends State<TestMain2> {
                       buildButtons(btn_main7, updateData, context)
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -394,6 +404,7 @@ class _TestMain3State extends State<TestMain3> {
                       buildButtons(btn_main9, updateData, context),
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -402,6 +413,7 @@ class _TestMain3State extends State<TestMain3> {
                       buildButtons(btn_main10, updateData, context),
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -409,6 +421,7 @@ class _TestMain3State extends State<TestMain3> {
                       buildButtons(btn_main11, updateData, context)
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -474,6 +487,7 @@ class _TestMain4State extends State<TestMain4> {
                       buildButtons(btn_main13, updateData, context),
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -482,6 +496,7 @@ class _TestMain4State extends State<TestMain4> {
                       buildButtons(btn_main14, updateData, context),
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -544,6 +559,7 @@ class _TestCheeseState extends State<TestCheese> {
                       buildButtons(btn_cheese1, updateData, context),
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -552,6 +568,7 @@ class _TestCheeseState extends State<TestCheese> {
                       buildButtons(btn_cheese2, updateData, context),
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -618,6 +635,7 @@ class _TestVege1State extends State<TestVege1> {
                       buildButtons(btn_vege1, updateData, context),
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -625,6 +643,7 @@ class _TestVege1State extends State<TestVege1> {
                       buildButtons(btn_vege2, updateData, context),
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -633,6 +652,7 @@ class _TestVege1State extends State<TestVege1> {
                       buildButtons(btn_vege3, updateData, context)
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -698,6 +718,7 @@ class _TestVege2State extends State<TestVege2> {
                       buildButtons(btn_vege5, updateData, context),
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -705,6 +726,7 @@ class _TestVege2State extends State<TestVege2> {
                       buildButtons(btn_vege6, updateData, context),
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -712,6 +734,7 @@ class _TestVege2State extends State<TestVege2> {
                       buildButtons(btn_vege7, updateData, context)
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -779,6 +802,7 @@ class _TestSauce1State extends State<TestSauce1> {
                       buildButtons(btn_sauce1, updateData, context),
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -787,6 +811,7 @@ class _TestSauce1State extends State<TestSauce1> {
                       buildButtons(btn_sauce2, updateData, context),
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -796,6 +821,7 @@ class _TestSauce1State extends State<TestSauce1> {
                       buildButtons(btn_sauce3, updateData, context)
                     ],
                   ),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -865,7 +891,7 @@ class _TestSauce2State extends State<TestSauce2> {
                       buildButtons(btn_sauce5, updateData, context),
                     ],
                   ),
-                  // greyLine(context),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -874,7 +900,7 @@ class _TestSauce2State extends State<TestSauce2> {
                       buildButtons(btn_sauce6, updateData, context),
                     ],
                   ),
-                  // greyLine(context),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -884,7 +910,7 @@ class _TestSauce2State extends State<TestSauce2> {
                       buildButtons(btn_sauce7, updateData, context)
                     ],
                   ),
-                  // greyLine(context),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -953,7 +979,7 @@ class _TestSauce3State extends State<TestSauce3> {
                       buildButtons(btn_sauce9, updateData, context),
                     ],
                   ),
-                  // greyLine(context),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -963,7 +989,7 @@ class _TestSauce3State extends State<TestSauce3> {
                       buildButtons(btn_sauce10, updateData, context),
                     ],
                   ),
-                  // greyLine(context),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -972,7 +998,7 @@ class _TestSauce3State extends State<TestSauce3> {
                       buildButtons(btn_sauce11, updateData, context)
                     ],
                   ),
-                  // greyLine(context),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -1039,7 +1065,7 @@ class _TestSauce4State extends State<TestSauce4> {
                       buildButtons(btn_sauce13, updateData, context),
                     ],
                   ),
-                  // greyLine(context),
+                  greyLine(context),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -1121,7 +1147,7 @@ class _TestResultLoadingState extends State<TestResultLoading> {
                   Padding(
                     padding: EdgeInsets.only(top: 5.0, right: 30.0),
                     child: Text(
-                      '14/14',
+                      '13/13',
                       style: kSmallTextStyle,
                     ),
                   )
