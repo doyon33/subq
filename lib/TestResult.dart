@@ -29,10 +29,19 @@ class _TestResultState extends State<TestResult> {
             color: Colors.white,
             child: Column(
               children: [
-                MainAppBar(
-                  context,
-                  iconBtn: backIcon(context)
-                ),
+                MainAppBar(context,
+                    iconBtn: IconButton(
+                        padding: const EdgeInsets.only(bottom: 5),
+                        constraints: const BoxConstraints(),
+                        onPressed: () {
+                          Navigator.pop(context);
+                          Navigator.pop(context);
+                        },
+                        icon: const Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.black,
+                          size: 30,
+                        ))),
                 const Padding(
                     padding: EdgeInsets.all(15.0),
                     child: (Text(
@@ -49,22 +58,20 @@ class _TestResultState extends State<TestResult> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Stack(alignment: Alignment.bottomCenter, children: [
-                        Container(
-                            color: Colors.yellowAccent, width: 200, height: 10),
-                        Text(
+                      Container(
+                        color: Colors.yellowAccent,
+                        child: Text(
                           '${displayData.menu} + ${displayData.sauce}',
                           style: kLargeTextStyle,
                           textAlign: TextAlign.center,
                         ),
-                      ]),
+                      ),
                       const SizedBox(
                         height: 15.0,
                       ),
                       Image.asset(
-                        '${displayData.filename}',
-                        width: 150.0,
-                      ),
+                          'assets/image/menu/${displayData.menuCode}.png',
+                          width: 150),
                       const SizedBox(
                         height: 15.0,
                       ),
@@ -115,8 +122,8 @@ class _TestResultState extends State<TestResult> {
                         },
                         child: Container(
                           padding: const EdgeInsets.all(9.0),
-                          decoration:
-                              kButtonStyleB.copyWith(color: const Color(0xffb5d0c3)),
+                          decoration: kButtonStyleB.copyWith(
+                              color: const Color(0xffb5d0c3)),
                           child: const Text(
                             '영양성분 보러가기',
                             style: kMediumBTextStyle,
@@ -271,10 +278,7 @@ class _MenuInfoState extends State<MenuInfo> {
           child: (Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              MainAppBar(
-                context,
-                iconBtn: backIcon(context)
-              ),
+              MainAppBar(context, iconBtn: backIcon(context)),
               Padding(
                 padding: const EdgeInsets.only(top: 30.0, bottom: 10.0),
                 child: Text(
@@ -394,7 +398,10 @@ class _MenuInfoState extends State<MenuInfo> {
                 child: RichText(
                   text: const TextSpan(
                     children: [
-                      WidgetSpan(child: SizedBox(width: 10,)),
+                      WidgetSpan(
+                          child: SizedBox(
+                        width: 10,
+                      )),
                       (TextSpan(
                         text:
                             ' 영양성분 및 관련 정보는 서브웨이 홈페이지 등 공개된 정보를 기반으로 추정한 정보로 실제 구매하시는 메뉴의 영양정보와 상이할 수 있습니다. 본 정보는 주문시 메뉴선택에 도움을 드리고자 제공되는 정보로 참고 목적으로만 활용 부탁드립니다.',
