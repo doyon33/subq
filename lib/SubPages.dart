@@ -33,7 +33,7 @@ class TermsPage extends StatelessWidget {
                         padding: EdgeInsets.only(top: 10, bottom: 10),
                         child: Text(
                           '[서브큐 이용안내]',
-                          style: TextStyle(fontSize: 16),
+                          style: kLargeTextStyle,
                         ),
                       ),
                       Padding(
@@ -42,28 +42,28 @@ class TermsPage extends StatelessWidget {
                           '\'서브큐\' 서비스(ver 1.0)는 서브웨이 메뉴선택시 도움을 드리고자 (주)팜킷에서 자체 개발한 임시 팝업 서비스 입니다.'
                           '본 서비스는 서브웨이 본사와 연관이 없으며, 제공하는 정보는 공개된 정보를 활용하여 참고용 목적으로 제공하고 있어 실제 정보와 상이 할 수 있습니다.'
                           '본 서비스를 이용하면서 입력하는 사전서비스신청을 제외한 모든 정보는 해당 서비스 종료시 모두 파기됩니다.',
-                          style: TextStyle(fontSize: 14),
+                          style: kSmallTextStyle,
                         ),
                       ),
                       Padding(
                         padding: EdgeInsets.only(top: 10, bottom: 10),
                         child: Text(
                           '[버전 정보]',
-                          style: TextStyle(fontSize: 16),
+                          style: kLargeTextStyle,
                         ),
                       ),
                       Padding(
                         padding: EdgeInsets.only(bottom: 20),
                         child: Text(
                           'ver1.0',
-                          style: TextStyle(fontSize: 14),
+                          style: kSmallTextStyle,
                         ),
                       ),
                       Padding(
                         padding: EdgeInsets.only(top: 10, bottom: 10),
                         child: Text(
                           '[이용 약관]',
-                          style: TextStyle(fontSize: 16),
+                          style: kLargeTextStyle,
                         ),
                       ),
                       Padding(
