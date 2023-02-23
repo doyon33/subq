@@ -3,17 +3,27 @@ import 'package:http/http.dart' as http;
 import 'package:subq/TestResult.dart';
 import 'main.dart';
 
-// 메뉴에 해당하는 이미지 파일을 불러오기 위한 Map
-Map<String, String> imgFileMap = {
-  '에그마요': 'assets/image/menu/eggmayo.png',
-  '베이컨': 'assets/image/menu/bacon.png',
-  '바베큐': 'assets/image/menu/bbq.png',
-  '치킨': 'assets/image/menu/chicken.png',
-  '햄': 'assets/image/menu/ham.png',
-  '쉬림프': 'assets/image/menu/shrimp.png',
-  '스테이크': 'assets/image/menu/steak.png',
-  '참치': 'assets/image/menu/tuna.png',
-  '베지': 'assets/image/menu/vege.png'
+// 메뉴에 해당하는 이미지 파일을 불러오기 위한 메뉴 이름:메뉴 코드 맵
+Map<String, String> MenuCodeMap = {
+  '풀드포크바비큐': 'SUBWAY_MAIN_MENU_10001',
+  '햄': 'SUBWAY_MAIN_MENU_10002',
+  '치킨슬라이스': 'SUBWAY_MAIN_MENU_10003',
+  '스테이크&치즈': 'SUBWAY_MAIN_MENU_10004',
+  '로티세리바비큐치킨': 'SUBWAY_MAIN_MENU_10005',
+  '로스트치킨': 'SUBWAY_MAIN_MENU_10006',
+  '쉬림프': 'SUBWAY_MAIN_MENU_10007',
+  '치킨데리야끼': 'SUBWAY_MAIN_MENU_10008',
+  '참치': 'SUBWAY_MAIN_MENU_10009',
+  '에그마요': 'SUBWAY_MAIN_MENU_10010',
+  '베지': 'SUBWAY_MAIN_MENU_10011',
+  '비엘티': 'SUBWAY_MAIN_MENU_10012',
+  '이탈리안비엠티': 'SUBWAY_MAIN_MENU_10013',
+  '서브웨이클럽': 'SUBWAY_MAIN_MENU_100014',
+  '치킨베이컨아보카도': 'SUBWAY_MAIN_MENU_10015',
+  '스파이시이탈리안': 'SUBWAY_MAIN_MENU_10016',
+  '에그마요베이컨': 'SUBWAY_MAIN_MENU_10017',
+  '에그마요페퍼로니': 'SUBWAY_MAIN_MENU_10018',
+  'K-바비큐': 'SUBWAY_MAIN_MENU_10019',
 };
 
 //테스트 결과로 나온 추천 메뉴 각각의 정보 클래스
@@ -29,7 +39,7 @@ class TestResultData {
   double? fat;
   double? dietaryFiber;
 
-  String? filename; //이미지 파일
+  String? menuCode; //메뉴 코드
 
   TestResultData(
       String this.menu,
@@ -37,7 +47,7 @@ class TestResultData {
       String this.main,
       String this.cheese,
       String this.sauce,
-      String this.filename,
+      String this.menuCode,
       double this.kcal,
       double this.carbo,
       double this.protein,
@@ -120,8 +130,8 @@ class Utils {
   static void printMenu(dynamic jboj) {
     //print(jboj);
     print("");
-    print(jboj['info']);
-    print(jboj['nutrition']);
+    // print(jboj['info']);
+    // print(jboj['nutrition']);
     // print("이름: ${jboj['name']}");
     // print("빵: ${jboj['bread']}");
     // print("메인재료: ${jboj['main']}");
@@ -140,8 +150,7 @@ class Utils {
         jboj['main'],
         jboj['cheese'],
         jboj['sauce'],
-        // imgFileMap[jboj['main']]!,
-        'assets/image/menu/eggmayo.png',
+        MenuCodeMap[jboj['main']]!,
         jboj['nutrition']['calorie'],
         jboj['nutrition']['carbohydrate'],
         jboj['nutrition']['protein'],
