@@ -130,8 +130,8 @@ class Utils {
   static void printMenu(dynamic jboj) {
     //print(jboj);
     print("");
-    // print(jboj['info']);
-    // print(jboj['nutrition']);
+    print(jboj['info']);
+    print(jboj['nutrition']);
     // print("이름: ${jboj['name']}");
     // print("빵: ${jboj['bread']}");
     // print("메인재료: ${jboj['main']}");
