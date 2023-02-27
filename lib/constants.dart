@@ -329,7 +329,7 @@ Widget toppingImg(BuildContext context, String menuName, String imgFile,
     child: Column(
       children: [
         FittedBox(
-          fit: BoxFit.fitWidth,
+          fit: BoxFit.cover,
           child: Text(
             menuName,
             style: kMediumBTextStyle,
