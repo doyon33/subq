@@ -212,7 +212,7 @@ Widget buildTop(
               ),
               const Expanded(
                 child: Text(
-                  '잘 모르는 재료는 평가하지 않아도 됩니다.',
+                  '14가지 종류의 소스에 대한 평가를 해주세요.',
                   style: kMediumTextStyle,
                 ),
               ),
