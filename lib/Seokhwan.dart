@@ -33,11 +33,13 @@ class TestResultData {
   String? main;
   String? cheese;
   String? sauce;
+  String? toppings;
   double? kcal;
   double? carbo;
   double? protein;
   double? fat;
   double? dietaryFiber;
+  double? natrium;
 
   String? menuCode; //메뉴 코드
 
@@ -47,12 +49,14 @@ class TestResultData {
       String this.main,
       String this.cheese,
       String this.sauce,
+      String this.toppings,
       String this.menuCode,
       double this.kcal,
       double this.carbo,
       double this.protein,
       double this.fat,
-      double this.dietaryFiber);
+      double this.dietaryFiber,
+      double this.natrium);
 }
 
 //테스트 결과를 바탕으로 생성되는 추천 메뉴 5가지를 담은 데이터베이스 클래스
@@ -132,16 +136,37 @@ class Utils {
     print("");
     print(jboj['info']);
     print(jboj['nutrition']);
-    // print("이름: ${jboj['name']}");
-    // print("빵: ${jboj['bread']}");
-    // print("메인재료: ${jboj['main']}");
-    // print("치즈: ${jboj['cheese']}");
-    // print("소스: ${jboj['sauce']}");
+    print("이름: ${jboj['name']}");
+    print("빵: ${jboj['bread']}");
+    print("메인재료: ${jboj['main']}");
+    print("치즈: ${jboj['cheese']}");
+    print("소스: ${jboj['sauce']}");
     // print("kcal: ${jboj['nutrition']['calorie']}");
     // print("탄수화물: ${jboj['nutrition']['carbohydrate']}");
     // print("단백질: ${jboj['nutrition']['protein']}");
     // print("포화지방: ${jboj['nutrition']['fat']}");
     // print("식이섬유: ${jboj['nutrition']['dietary_fiber']}");
+    // print("나트륨: ${jboj['nutrition']['natrium']}");
+    // print("토핑 : ${jboj['info']['toppings']}");
+    List<dynamic> mainToppingList = ['에그마요', '스테이크', '참치', '풀드포크바비큐', '쉬림프', '치킨브레스트', '햄', '베이컨', '아보카도', '치킨브레스트햄', '페퍼로니', '살라미', '치킨데리야끼', '로티세리치킨', '베지'];
+    List<dynamic> toppingList = jboj['info']['toppings']; // 원본
+    List<dynamic> vegetableList = []; //메인 토핑이 제외된, 야채 리스트
+
+    toppingList.remove("${jboj['name']}");
+    toppingList.remove("${jboj['main']}");
+    toppingList.remove("${jboj['bread']}");
+    toppingList.remove("${jboj['cheese']}");
+    toppingList.remove("${jboj['sauce']}");
+
+    for (var element in toppingList) {
+      if (mainToppingList.contains(element)) {
+        continue;
+      }
+      else {
+        vegetableList.add(element);
+      }
+    }
+    String vegetableStr = vegetableList.join(', ');
 
     //TestResultData 클래스의 인스턴스를 생성
     var s = TestResultData(
@@ -150,12 +175,14 @@ class Utils {
         jboj['main'],
         jboj['cheese'],
         jboj['sauce'],
+        vegetableStr,
         MenuCodeMap[jboj['main']]!,
         jboj['nutrition']['calorie'],
         jboj['nutrition']['carbohydrate'],
         jboj['nutrition']['protein'],
         jboj['nutrition']['fat'],
-        jboj['nutrition']['dietary_fiber']);
+        jboj['nutrition']['dietary_fiber'],
+        jboj['nutrition']['natrium']);
 
     //DataBase의 인스턴스인 db(line:56)의 멤버함수를 통해 저장
     db.addData(s);
