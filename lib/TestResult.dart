@@ -110,6 +110,14 @@ class _TestResultState extends State<TestResult> {
                                 text: '${displayData.sauce}',
                                 style: kMediumBTextStyle)
                           ])),
+                          RichText(
+                              text: TextSpan(children: [
+                                const TextSpan(
+                                    text: '기본 토핑 : ', style: kMediumTextStyle),
+                                TextSpan(
+                                    text: '${displayData.toppings}',
+                                    style: kMediumBTextStyle)
+                              ])),
                           const SizedBox(height: 20),
                         ],
                       ),
@@ -300,7 +308,8 @@ class _MenuInfoState extends State<MenuInfo> {
                         Text('탄수화물(g)\n', style: kMediumTextStyle),
                         Text('지방(g)\n', style: kMediumTextStyle),
                         Text('식이섬유(g)\n', style: kMediumTextStyle),
-                        Text('단백질(g)', style: kMediumTextStyle)
+                        Text('단백질(g)\n', style: kMediumTextStyle),
+                        Text('나트륨(mg)', style: kMediumTextStyle,)
                       ],
                     ),
                     Container(
@@ -327,9 +336,13 @@ class _MenuInfoState extends State<MenuInfo> {
                           style: kMediumTextStyle,
                         ),
                         Text(
-                          '${widget.displayData.protein!.round()}',
+                          '${widget.displayData.protein!.round()}\n',
                           style: kMediumTextStyle,
                         ),
+                        Text(
+                          '${widget.displayData.natrium!.round()}',
+                          style: kMediumTextStyle,
+                        )
                       ],
                     )
                   ],
