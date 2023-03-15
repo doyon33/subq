@@ -162,7 +162,8 @@ IconButton backIcon(BuildContext context) {
 //Type Test에서 공통되는 상단 컨테이너 생성 함수
 // linear progress bar, texts with padding
 Widget buildTop(
-    BuildContext context, int pageNum, double progressValue, String category) {
+    BuildContext context, int pageNum, double progressValue, String category,
+    int toppingNum) {
   return Container(
     child: Column(
       children: [
@@ -210,9 +211,9 @@ Widget buildTop(
                   style: kLargeTextStyle,
                 ),
               ),
-              const Expanded(
+              Expanded(
                 child: Text(
-                  '14가지 종류의 소스에 대한 평가를 해주세요.',
+                  '$toppingNum가지 종류의 $category에 대한 평가를 해주세요.',
                   style: kMediumTextStyle,
                 ),
               ),

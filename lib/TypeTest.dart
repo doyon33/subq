@@ -70,7 +70,7 @@ class _TestBread1State extends State<TestBread1> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 1, 0.07, '브레드'),
+            buildTop(context, 1, 0.07, '브레드', 6),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
                 child: Column(
@@ -160,7 +160,7 @@ class _TestBread2State extends State<TestBread2> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 2, 0.15, '브레드'),
+            buildTop(context, 2, 0.15, '브레드', 6),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -228,7 +228,7 @@ class _TestMain1State extends State<TestMain1> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 3, 0.23, '메인 토핑'),
+            buildTop(context, 3, 0.23, '메인 토핑', 15),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -310,7 +310,7 @@ class _TestMain2State extends State<TestMain2> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 4, 0.3, '메인 토핑'),
+            buildTop(context, 4, 0.3, '메인 토핑', 15),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -392,7 +392,7 @@ class _TestMain3State extends State<TestMain3> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 5, 0.38, '메인 토핑'),
+            buildTop(context, 5, 0.38, '메인 토핑', 15),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -475,7 +475,7 @@ class _TestMain4State extends State<TestMain4> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 6, 0.46, '메인 토핑'),
+            buildTop(context, 6, 0.46, '메인 토핑', 15),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -546,7 +546,7 @@ class _TestCheeseState extends State<TestCheese> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 7, 0.53, '치즈'),
+            buildTop(context, 7, 0.53, '치즈', 3),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -622,7 +622,7 @@ class _TestVege1State extends State<TestVege1> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 8, 0.61, '야채'),
+            buildTop(context, 8, 0.61, '야채', 8),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -706,7 +706,7 @@ class _TestVege2State extends State<TestVege2> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 9, 0.7, '야채'),
+            buildTop(context, 9, 0.7, '야채', 8),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -789,7 +789,7 @@ class _TestSauce1State extends State<TestSauce1> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 10, 0.77, '소스'),
+            buildTop(context, 10, 0.77, '소스', 14),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -877,7 +877,7 @@ class _TestSauce2State extends State<TestSauce2> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 11, 0.84, '소스'),
+            buildTop(context, 11, 0.84, '소스', 14),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -965,7 +965,7 @@ class _TestSauce3State extends State<TestSauce3> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 12, 0.92, '소스'),
+            buildTop(context, 12, 0.92, '소스', 14),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -1052,7 +1052,7 @@ class _TestSauce4State extends State<TestSauce4> {
           color: Colors.white,
           child: Column(children: [
             TestAppBar(context),
-            buildTop(context, 13, 1, '소스'),
+            buildTop(context, 13, 1, '소스', 14),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
